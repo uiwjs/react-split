@@ -5,13 +5,17 @@ Split 面板分割
 
 ```jsx
 import { Split } from 'uiw';
-// or 
+```
+
+从组件库 `uiw` 中抽离出来的 `@uiw/react-split`，可以单独使用。
+
+```jsx
 import Split from '@uiw/react-split';
 ```
 
 ### 基础用法
 
-~~通过设置子节点的 `minWidth` 样式，即可设置拖拽最小宽度值。通过设置子节点样式 `flexBasis` 样式即可设置默认分割内容的占比宽度。~~
+> ~~通过设置子节点的 `minWidth` 样式，即可设置拖拽最小宽度值。通过设置子节点样式 `flexBasis` 样式即可设置默认分割内容的占比宽度。~~
 
 - 固定初始宽度或者高度，可通过设置子节点，样式 `width: '80%'` 宽度百分百来计算。
 - 拖拽至最小宽度，可通过设置子节点样式 `minWidth: 30`，来达到效果
@@ -58,7 +62,7 @@ ReactDOM.render(<Demo />, _mount_);
 
 <!--DemoStart,bgWhite,codePen--> 
 ```jsx
-import { Split, Divider } from 'uiw';
+import { Split } from 'uiw';
 
 const Demo = () => (
   <div>
@@ -78,7 +82,7 @@ const Demo = () => (
         Footer
       </div>
     </Split>
-    <Divider />
+    <div style={{ height: 20 }}></div>
     <Split visiable={false}>
       <div style={{ minWidth: 200, maxWidth: 200, minHeight: 85, background: '#a9a9a9' }}>
         Sider
@@ -371,7 +375,6 @@ ReactDOM.render(<Demo />, _mount_);
 | mode | 类型，可选值为 `horizontal` 或 `vertical` | String | `horizontal` |
 | onDragging | 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定 | Function(prePaneSize,<br />nextPaneSize,<br />nextPaneNumber) | - |
 | onDragEnd | 拖拽结束的回调函数 | Function(prePaneSize,<br />nextPaneSize,<br />nextPaneNumber) | - |
-
 
 ## Development
 

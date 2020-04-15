@@ -6,11 +6,29 @@ export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 
   style?: React.CSSProperties;
   className?: string;
   prefixCls?: string;
+  /**
+   * 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定
+   */
   onDragging?: (preSize: number, nextSize: number, paneNumber: number) => void;
+  /**
+   * 拖拽结束的回调函数
+   */
   onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
+  /**
+   * 设置拖拽的工具条，为线条样式。
+   */
   lineBar?: boolean;
+  /**
+   * 设置拖拽的工具条，是否可见
+   */
   visiable?: boolean | number[];
+  /**
+   * 设置拖拽的工具条，禁用
+   */
   disable?: boolean | number[];
+  /**
+   * 类型，可选值为 `horizontal` 或 `vertical`
+   */
   mode?: 'horizontal' | 'vertical';
 }
 export interface SplitState {
