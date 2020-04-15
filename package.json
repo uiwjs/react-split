@@ -21,9 +21,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kktjs/kkt.git"
+    "url": "https://github.com/uiwjs/react-split.git"
   },
-  "author": "kenny wong <wowohoo@qq.com>",
+  "author": "Kenny Wong <wowohoo@qq.com>",
   "license": "MIT",
   "files": [
     "src",
