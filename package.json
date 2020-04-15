@@ -5,6 +5,7 @@
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "typings": "lib/esm/index.d.ts",
+  "homepage": "https://uiwjs.github.io/react-split",
   "scripts": {
     "prepare": "npm run build",
     "released": "npm run build && npm run doc",
