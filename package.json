@@ -51,7 +51,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "4.3.1",
-    "tsbb": "1.7.0",
+    "tsbb": "1.7.1",
     "uiw": "3.10.9"
   },
   "eslintConfig": {
