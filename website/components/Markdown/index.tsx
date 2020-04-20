@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import ReactMarkdown from 'react-markdown';
+import MarkdownPreview, { MarkdownAbstractSyntaxTree, NodeType } from '@uiw/react-markdown-preview';
 import Code from './Code';
-import './styles/default.module.less';
-import './styles/index.module.less';
 
 interface MarkdownProps { }
 interface MarkdownState {
@@ -51,15 +49,15 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
   }
   render() {
     return (
-      <ReactMarkdown
+      <MarkdownPreview
+        style={{ margin: 25 }}
         source={this.state.mdStr}
-        className="markdown"
         escapeHtml={false}
-        allowNode={(node: ReactMarkdown.MarkdownAbstractSyntaxTree, index: number, parent: ReactMarkdown.NodeType) => {
+        allowNode={(node: MarkdownAbstractSyntaxTree, index: number, parent: NodeType) => {
           if(node.type === 'code') {
             const preIdx = index - 1;
             const nextIdx = index + 1;
-            const childs: ReactMarkdown.MarkdownAbstractSyntaxTree[] = (parent as any).children;
+            const childs: MarkdownAbstractSyntaxTree[] = (parent as any).children;
             /**
              * 将参数放入代码的前面注释
              */

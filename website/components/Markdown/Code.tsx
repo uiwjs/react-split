@@ -1,5 +1,6 @@
 import React from 'react';
 import CodePreview, { ICodePreviewProps } from '@uiw/react-code-preview';
+import classnames from 'classnames';
 
 const regxOpts = /^;\{\{\/\*\*(.+?)\*\*\/\}\};/g;
 
@@ -11,8 +12,9 @@ export interface CodeProps {
 
 export default function Code({ language, value, dependencies, ...other }: CodeProps) {
   const props: ICodePreviewProps = {};
+  let onlyPreview: boolean = false;
   if(/\^(js|jsx)/.test(language) || !regxOpts.test(value)) {
-    props.onlyEdit = true;
+    onlyPreview = true;
   }
   props.code = value.replace(regxOpts, '');
   const propsStr = value.match(regxOpts);
@@ -28,6 +30,14 @@ export default function Code({ language, value, dependencies, ...other }: CodePr
         })
       });
     } catch (error) {}
+  }
+  if (onlyPreview) {
+    const className = classnames({ [`language-${language}`]: language})
+    return (
+      <pre className={className}>
+        {props.code && <code className={className}>{props.code}</code>}
+      </pre>
+    );
   }
   return (
     <CodePreview {...props} language={language} dependencies={dependencies} />
