@@ -2,26 +2,17 @@ import path from 'path';
 import { OptionConf, Webpack, ModuleScopePluginOpts, LoaderOneOf } from 'kkt';
 import webpack from 'webpack';
 
-export const loaderOneOf = [
-  require.resolve('@kkt/loader-less')
+export const loaderOneOf: LoaderOneOf = [
+  require.resolve('@kkt/loader-less'),
+  require.resolve('@kkt/loader-raw')
 ];
 
-export const moduleScopePluginOpts = [
+export const moduleScopePluginOpts: ModuleScopePluginOpts = [
   path.resolve(process.cwd(), 'README.md')
 ];
 
 export default (conf: webpack.Configuration, opts: OptionConf, webpack: Webpack) => {
   const pkg = require(path.resolve(process.cwd(), 'package.json'));
-  // Webpack parses md file text
-  conf.module!.rules.map((item) => {
-    if (item.oneOf) {
-      item.oneOf.unshift({
-        test: /\.md$/,
-        use: require.resolve('raw-loader'),
-      });
-    }
-    return item;
-  });
 
   // Get the project version.
   conf.plugins!.push(
@@ -29,7 +20,7 @@ export default (conf: webpack.Configuration, opts: OptionConf, webpack: Webpack)
       VERSION: JSON.stringify(pkg.version),
     })
   );
-
+  conf.output = { ...conf.output, publicPath: './' }
   return conf;
 }
 
