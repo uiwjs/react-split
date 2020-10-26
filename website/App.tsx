@@ -7,7 +7,7 @@ import Page from './Page';
 const App: React.FC = () => {
   return (
     <div className="App">
-      <GitHubCorners href="https://github.com/uiwjs/react-split"/>
+      <GitHubCorners zIndex={9999} fixed href="https://github.com/uiwjs/react-split"/>
       <header className="App-header">
         <h1 className="title">React Split</h1>
         <a className="App-link" href="https://github.com/uiwjs/react-split" target="_blank" rel="noopener noreferrer">

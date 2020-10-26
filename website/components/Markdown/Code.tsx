@@ -1,6 +1,5 @@
 import React from 'react';
 import CodePreview, { ICodePreviewProps } from '@uiw/react-code-preview';
-import classnames from 'classnames';
 
 const regxOpts = /^;\{\{\/\*\*(.+?)\*\*\/\}\};/g;
 
@@ -32,7 +31,7 @@ export default function Code({ language, value, dependencies, ...other }: CodePr
     } catch (error) {}
   }
   if (onlyPreview) {
-    const className = classnames({ [`language-${language}`]: language})
+    const className = language ? `language-${language}` : '';
     return (
       <pre className={className}>
         {props.code && <code className={className}>{props.code}</code>}

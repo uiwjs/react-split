@@ -1,5 +1,4 @@
 import React from 'react';
-import classnames from 'classnames';
 import './style/index.less';
 
 export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 'onDragEnd'> {
@@ -149,24 +148,31 @@ export default class Split extends React.Component<SplitProps, SplitState> {
   render() {
     const { prefixCls, className, children, mode, visiable, lineBar, disable, onDragEnd, onDragging, ...other } = this.props;
     const { dragging } = this.state;
-    const cls = classnames(prefixCls, className, `${prefixCls}-${mode}`, { dragging });
+    const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null].filter(Boolean)
+    .join(' ')
+    .trim();
     const child = React.Children.toArray(children);
     return (
       <div className={cls} {...other} ref={node => this.warpper = node}>
         {React.Children.map(child, (element: any, idx: number) => {
           const props = Object.assign({}, element.props, {
-            className: classnames(`${prefixCls}-pane`, element.props.className),
+            className: [`${prefixCls}-pane`, element.props.className].filter(Boolean)
+            .join(' ')
+            .trim(),
             style: { ...element.props.style },
           });
           const visiableBar = (visiable === true || (visiable && visiable.includes((idx + 1) as never))) || false;
           const barProps = {
-            className: classnames(`${prefixCls}-bar`, {
-              [`${prefixCls}-line-bar`]: lineBar,
-              [`${prefixCls}-large-bar`]: !lineBar,
-            }),
+            className: [`${prefixCls}-bar`, 
+            lineBar ? `${prefixCls}-line-bar` : null,
+            !lineBar ? `${prefixCls}-large-bar` : null].filter(Boolean)
+            .join(' ')
+            .trim(),
           };
           if (disable === true || (disable && disable.includes((idx + 1) as never))) {
-            barProps.className = classnames(barProps.className, { disable });
+            barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean)
+            .join(' ')
+            .trim();
           }
           return (
             <React.Fragment>
