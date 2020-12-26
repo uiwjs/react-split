@@ -1,11 +1,12 @@
 Split 面板分割
 ===
 
-[![](https://img.shields.io/github/issues/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/issues)
-[![](https://img.shields.io/github/forks/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/network)
-[![](https://img.shields.io/github/stars/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/stargazers)
-[![](https://img.shields.io/github/release/uiwjs/react-split)](https://github.com/uiwjs/react-split/releases)
-[![](https://img.shields.io/npm/v/@uiw/react-split.svg)](https://www.npmjs.com/package/@uiw/react-split)
+[![Build & Deploy](https://github.com/uiwjs/react-split/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/uiwjs/react-split/actions)
+[![Issues](https://img.shields.io/github/issues/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/issues)
+[![Forks](https://img.shields.io/github/forks/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/network)
+[![Stars](https://img.shields.io/github/stars/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/stargazers)
+[![Release](https://img.shields.io/github/release/uiwjs/react-split)](https://github.com/uiwjs/react-split/releases)
+[![npm version](https://img.shields.io/npm/v/@uiw/react-split.svg)](https://www.npmjs.com/package/@uiw/react-split)
 
 可将一块内容，分割为可以拖拽调整宽度或高度的区域。
 
