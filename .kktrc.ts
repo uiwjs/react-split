@@ -132,7 +132,6 @@ export default (conf: Configuration, env: string, options: LoaderConfOptions) =>
     },
   };
 
-  conf.output = { ...conf.output, publicPath: './' }
   return conf;
 }
 
