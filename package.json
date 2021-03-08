@@ -48,8 +48,8 @@
     "@uiw/reset.css": "1.0.4",
     "compile-less-cli": "1.6.0",
     "kkt": "6.0.11",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
     "tsbb": "1.7.7",
     "uiw": "4.6.14"
   },
