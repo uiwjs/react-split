@@ -39,7 +39,7 @@
   "devDependencies": {
     "@kkt/less-modules": "6.0.11",
     "@kkt/raw-modules": "6.0.11",
-    "@kkt/scope-plugin-options": "6.0.11",
+    "@kkt/scope-plugin-options": "6.8.0",
     "@types/react": "16.9.34",
     "@types/react-dom": "16.9.6",
     "@uiw/react-code-preview": "1.11.11",
