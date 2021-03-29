@@ -37,21 +37,21 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@kkt/less-modules": "6.0.11",
-    "@kkt/raw-modules": "6.0.11",
-    "@kkt/scope-plugin-options": "6.0.11",
-    "@types/react": "16.9.34",
-    "@types/react-dom": "16.9.6",
+    "@kkt/less-modules": "6.8.2",
+    "@kkt/raw-modules": "6.8.2",
+    "@kkt/scope-plugin-options": "6.8.2",
+    "@types/react": "17.0.3",
+    "@types/react-dom": "17.0.3",
     "@uiw/react-code-preview": "1.11.11",
     "@uiw/react-github-corners": "1.2.0",
-    "@uiw/react-markdown-preview": "1.0.9",
+    "@uiw/react-markdown-preview": "2.1.1",
     "@uiw/reset.css": "1.0.4",
-    "compile-less-cli": "1.6.0",
-    "kkt": "6.0.11",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "tsbb": "1.7.7",
-    "uiw": "4.6.14"
+    "compile-less-cli": "1.7.0",
+    "kkt": "6.8.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tsbb": "2.1.2",
+    "uiw": "4.7.12"
   },
   "eslintConfig": {
     "extends": [
