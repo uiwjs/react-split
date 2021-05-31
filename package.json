@@ -51,7 +51,7 @@
     "rehype-attr": "1.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsbb": "2.1.2",
+    "tsbb": "2.2.0",
     "uiw": "4.7.14"
   },
   "eslintConfig": {
