@@ -35,7 +35,7 @@ export default function Code({ language, dependencies, codePen, codeSandbox, ...
         'package.json': {
           content: {
             name: 'react-amap-demo',
-            description: `高德地图 React 组件 - demo`,
+            description: `Split 面板分割 React 组件 - demo`,
             dependencies: {
               react: 'latest',
               'react-dom': 'latest',

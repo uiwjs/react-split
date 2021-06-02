@@ -66,7 +66,7 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
         style={{ padding: '20px 26px' }}
         source={this.state.mdStr}
         className={styles.markdown}
-        rehypePlugins={[rehypeAttr]}
+        rehypePlugins={[[rehypeAttr, { properties: 'attr' }]]}
         components={{
           /**
            * bgWhite 设置代码预览背景白色，否则为格子背景。
@@ -75,15 +75,15 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
            * noScroll 预览区域不显示滚动条。
            * codePen 显示 Codepen 按钮，要特别注意 包导入的问题，实例中的 import 主要用于 Codepen 使用。
            */
-          code: ({ 'data-config': config, inline, node, ...props }) => {
-            if (config) {
-              const { noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox } = config as CodeProps;
+          code: ({ inline, node, noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox, ...props }) => {
+            const conf = { noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox } as CodeProps;
+            if (noPreview || noScroll || bgWhite || noCode || codePen || codeSandbox) {
               return (
                 <Code
+                  {...conf}
                   code={getCodeStr(node.children)}
                   dependencies={this.dependencies}
                   language={(props.className || '').replace(/^language-/, '')}
-                  {...{ noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox }}
                 />
               );
             }

@@ -17,7 +17,9 @@ const App: React.FC = () => {
           A piece of view can be divided into areas where the width or height can be adjusted by dragging.
         </p>
       </header>
-      <Page />
+      <div style={{ maxWidth: 980, margin: '0 auto'}}>
+        <Page />
+      </div>
     </div>
   );
 }
