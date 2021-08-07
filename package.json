@@ -46,7 +46,7 @@
     "@uiw/react-code-preview": "1.11.13",
     "@uiw/react-github-corners": "1.4.0",
     "@uiw/react-markdown-preview": "3.1.1",
-    "@uiw/reset.css": "1.0.4",
+    "@uiw/reset.css": "1.0.5",
     "compile-less-cli": "1.8.0",
     "kkt": "6.10.4",
     "rehype-attr": "1.3.2",
