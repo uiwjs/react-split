@@ -14,7 +14,8 @@
     "css:build": "compile-less -d src -o esm",
     "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
     "watch": "tsbb watch & npm run css:watch",
-    "build": "tsbb build && npm run css:build && npm run css:build:dist"
+    "build": "tsbb build && npm run css:build && npm run css:build:dist",
+    "type-check": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
