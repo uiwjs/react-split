@@ -18,6 +18,7 @@ jobs:
     - run: npm install
     - run: npm run build
     - run: npm run doc
+    - run: npm run type-check
 
     - name: Create Tag
       id: create_tag
