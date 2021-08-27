@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
 import rehypeAttr from 'rehype-attr';
-import Code, { CodeProps } from './Code';
+import Code from './Code';
 import styles from './index.module.less';
 
 interface MarkdownProps { }
@@ -49,7 +49,7 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
       mdStr: '',
     };
   }
-  getMdStr?: any;
+  getMdStr?: () => Promise<typeof import("*.md")>;
   dependencies?: any;
   componentDidMount() {
     if (this.getMdStr) {
@@ -75,19 +75,23 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
            * noScroll 预览区域不显示滚动条。
            * codePen 显示 Codepen 按钮，要特别注意 包导入的问题，实例中的 import 主要用于 Codepen 使用。
            */
-          code: ({ inline, node, noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox, ...props }) => {
-            const conf = { noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox } as CodeProps;
-            if (noPreview || noScroll || bgWhite || noCode || codePen || codeSandbox) {
-              return (
-                <Code
-                  {...conf}
-                  code={getCodeStr(node.children)}
-                  dependencies={this.dependencies}
-                  language={(props.className || '').replace(/^language-/, '')}
-                />
-              );
+           code: ({ inline, node, ...props }) => {
+            const { noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox } = props as any;
+            if (inline) {
+              return <code {...props} />;
             }
-            return <code {...props} />;
+            const config = { noPreview, noScroll, bgWhite, noCode, codePen } as any;
+            if (Object.keys(config).filter((name) => config[name] !== undefined).length === 0) {
+              return <code {...props} />;
+            }
+            return (
+              <Code
+                code={getCodeStr(node.children)}
+                dependencies={this.dependencies}
+                language={(props.className || '').replace(/^language-/, '')}
+                {...{ noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox }}
+              />
+            );
           },
         }}
       />

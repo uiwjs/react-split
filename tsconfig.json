@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    "module": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -12,17 +13,22 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "declaration": true,
-    "baseUrl": "website",
+    "baseUrl": "./website",
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "types": ["node"],
     "noEmit": true
   },
   "include": [
-    "website"
+    "website",
+    "src",
+    ".kktrc.ts"
   ]
 }

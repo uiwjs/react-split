@@ -392,11 +392,10 @@ Runs the project in development mode.
 
 ```bash
 # Step 1, run first, listen to the component compile and output the .js file
-npm run ts:watch
-# Step 2, listen for compilation output type .d.ts file
-npm run types:watch
-# Step 3, development mode, listen to compile preview website instance
-npm run doc:dev
+npm run watch
+npm run build
+# Step 2, development mode, listen to compile preview website instance
+npm run doc
 ```
 
 **production**
