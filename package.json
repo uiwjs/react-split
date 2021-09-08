@@ -40,7 +40,7 @@
     "@types/react-dom": "17.0.9",
     "@uiw/react-code-preview": "1.12.3",
     "@uiw/react-github-corners": "1.4.0",
-    "@uiw/react-markdown-preview": "3.2.2",
+    "@uiw/react-markdown-preview": "3.3.0",
     "@uiw/reset.css": "1.0.5",
     "compile-less-cli": "1.8.1",
     "kkt": "6.11.0",
