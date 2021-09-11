@@ -57,5 +57,5 @@ export default function Code({ language, dependencies, codePen, codeSandbox, ...
       },
     };
   }
-  return <CodePreview {...props} language={language} dependencies={dependencies} style={{ marginBottom: 0 }} />;
+  return <CodePreview {...props} dependencies={dependencies} style={{ marginBottom: 0 }} />;
 }
