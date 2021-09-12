@@ -1,6 +1,6 @@
 {
   "name": "@uiw/react-split",
-  "version": "5.8.2",
+  "version": "5.8.3",
   "description": "A piece of view can be divided into areas where the width or height can be adjusted by dragging.",
   "main": "cjs/index.js",
   "module": "esm/index.js",

@@ -88,7 +88,6 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
               <Code
                 code={getCodeStr(node.children)}
                 dependencies={this.dependencies}
-                language={(props.className || '').replace(/^language-/, '')}
                 {...{ noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox }}
               />
             );
