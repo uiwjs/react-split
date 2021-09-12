@@ -48,7 +48,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "tsbb": "3.1.9",
-    "uiw": "4.9.6"
+    "uiw": "4.9.7"
   },
   "eslintConfig": {
     "extends": [
