@@ -375,16 +375,73 @@ class Demo extends React.Component {
 ReactDOM.render(<Demo />, _mount_);
 ```
 
+### 支持自定义拖拽工具栏
+
+<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
+```jsx
+import ReactDOM from 'react-dom';
+import Split from '@uiw/react-split';
+
+const Demo = () => (
+  <div>
+    <Split
+      renderBar={({ onMouseDown, ...props }) => {
+        return (
+          <div {...props} style={{ boxShadow: 'none', background: 'transparent' }}>
+            <div onMouseDown={onMouseDown} style={{ backgroundColor: '#ff000057', boxShadow: 'none' }} />
+          </div>
+        );
+      }}
+      style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3 }}
+    >
+      <div style={{ minWidth: 60 }}>
+        test
+      </div>
+      <div style={{ minWidth: 80, flex: 1 }}>
+        Right Pane
+      </div>
+    </Split>
+  </div>
+);
+ReactDOM.render(<Demo />, _mount_);
+```
+
+
 ## Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-|--------- |-------- |--------- |-------- |
-| visiable | 设置拖拽的工具条，是否可见 | Boolean/Array | `true` |
-| disable | 设置拖拽的工具条，禁用 | Boolean/Array | - |
-| lineBar | 设置拖拽的工具条，为线条样式。 | Boolean | - |
-| mode | 类型，可选值为 `horizontal` 或 `vertical` | String | `horizontal` |
-| onDragging | 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定 | Function(prePaneSize,<br />nextPaneSize,<br />nextPaneNumber) | - |
-| onDragEnd | 拖拽结束的回调函数 | Function(prePaneSize,<br />nextPaneSize,<br />nextPaneNumber) | - |
+```ts
+export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 'onDragEnd'> {
+  style?: React.CSSProperties;
+  className?: string;
+  prefixCls?: string;
+  /**
+   * 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定
+   */
+  onDragging?: (preSize: number, nextSize: number, paneNumber: number) => void;
+  /**
+   * 拖拽结束的回调函数
+   */
+  onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
+  /** 支持自定义拖拽工具栏 */
+  renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+  /**
+   * 设置拖拽的工具条，为线条样式。
+   */
+  lineBar?: boolean;
+  /**
+   * 设置拖拽的工具条，是否可见
+   */
+  visiable?: boolean | number[];
+  /**
+   * 设置拖拽的工具条，禁用
+   */
+  disable?: boolean | number[];
+  /**
+   * 类型，可选值为 `horizontal` 或 `vertical`
+   */
+  mode?: 'horizontal' | 'vertical';
+}
+```
 
 ## Development
 

@@ -9,17 +9,13 @@ export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 
    * 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定
    */
   onDragging?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /**
-   * 拖拽结束的回调函数
-   */
+  /** 拖拽结束的回调函数 */
   onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /**
-   * 设置拖拽的工具条，为线条样式。
-   */
+  /** 支持自定义拖拽工具栏 */
+  renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+  /** 设置拖拽的工具条，为线条样式。 */
   lineBar?: boolean;
-  /**
-   * 设置拖拽的工具条，是否可见
-   */
+  /** 设置拖拽的工具条，是否可见 */
   visiable?: boolean | number[];
   /**
    * 设置拖拽的工具条，禁用
@@ -146,7 +142,7 @@ export default class Split extends React.Component<SplitProps, SplitState> {
     this.setState({ dragging: false });
   }
   render() {
-    const { prefixCls, className, children, mode, visiable, lineBar, disable, onDragEnd, onDragging, ...other } = this.props;
+    const { prefixCls, className, children, mode, visiable, renderBar, lineBar, disable, onDragEnd, onDragging, ...other } = this.props;
     const { dragging } = this.state;
     const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null].filter(Boolean)
     .join(' ')
@@ -174,9 +170,15 @@ export default class Split extends React.Component<SplitProps, SplitState> {
             .join(' ')
             .trim();
           }
+          let BarCom = null;
+          if (idx !== 0 && visiableBar && renderBar) {
+            BarCom = renderBar({ ...barProps, onMouseDown:  this.onMouseDown.bind(this, idx + 1) });
+          } else if (idx !== 0 && visiableBar) {
+            BarCom = React.createElement('div', { ...barProps }, <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />)
+          }
           return (
             <React.Fragment>
-              {idx !== 0 && visiableBar && React.createElement('div', { ...barProps }, <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />)}
+              {BarCom}
               {React.cloneElement(element, { ...props })}
             </React.Fragment>
           );
