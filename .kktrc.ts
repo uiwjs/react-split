@@ -20,6 +20,7 @@ export default (conf: Configuration, env: 'production' | 'development', options:
     VERSION: JSON.stringify(pkg.version),
   }));
   if (env === 'production') {
+    conf.module!.exprContextCritical = false;
     conf.output = { ...conf.output, publicPath: './' };
     conf.optimization = {
       ...conf.optimization,
