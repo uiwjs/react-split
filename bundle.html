@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://unpkg.com/@babel/standalone@7.17.x/babel.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react@17.x/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17.x/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@uiw/codepen-require-polyfill/index.js" crossorigin></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/@uiw/react-split/dist/split.css">
+  </head>
+  <body>
+    <div id="container" style="padding: 24px"></div>
+    <script src="https://unpkg.com/@uiw/react-split/dist/split.min.js"></script>
+    <script type="text/babel">
+      import Split from '@uiw/react-split';
+      console.log(Split)
+      const Demo = () => {
+        return (
+          <React.Fragment>
+            <Split style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3 }}>
+              <div style={{ width: '20%', minWidth: 30 }}>
+                <iframe
+                  srcDoc="<div>test</div>"
+                  style={{ width: '100%', height: '100%' }}
+                  title="Code Preview"
+                  sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-presentation allow-same-origin allow-scripts"
+                />
+              </div>
+              <div style={{ width: '80%', minWidth: 100 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div>
+                Left Pane
+              </div>
+              <div>
+                Center Pane
+              </div>
+              <div>
+                Center Pane
+              </div>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split lineBar style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div>
+                Left Pane
+              </div>
+              <div>
+                Center Pane
+              </div>
+              <div>
+                Center Pane
+              </div>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split mode="vertical" lineBar style={{ height: 210, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ height: '33.3%' }}>
+                Left Pane
+              </div>
+              <div style={{ height: '33.3%' }}>
+                Center Pane
+              </div>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split mode="vertical" style={{ height: 200, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ height: '50%' }}>
+                Top Pane
+              </div>
+              <div style={{ height: '50%' }}>
+                Bottom Pane
+              </div>
+            </Split>
+            <Split style={{ height: 200, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <Split mode="vertical">
+                <div style={{ height: '50%' }}>
+                  Top Pane
+                </div>
+                <Split style={{ height: '50%' }}>
+                  <div>
+                    Left Pane
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    Right Pane
+                  </div>
+                </Split>
+              </Split>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split visiable={false} style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ maxWidth: 100, backgroundColor: '#eaeaea' }}>
+                Left Pane
+              </div>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split visiable={[4, 5]} style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ maxWidth: 50, backgroundColor: '#eaeaea' }}>
+                Pane 1
+              </div>
+              <div style={{ maxWidth: 60 }}>
+                Pane 2
+              </div>
+              <div>
+                Pane 3
+              </div>
+              <div>
+                Pane 4
+              </div>
+              <div style={{ flex: 1 }}>
+                Pane 5
+              </div>
+            </Split>
+            <Split disable style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ maxWidth: 100, backgroundColor: '#eaeaea' }}>
+                Left Pane
+              </div>
+              <Split disable mode="vertical">
+                <div>
+                  Top Pane
+                </div>
+                <div>
+                  Bottom Pane
+                </div>
+              </Split>
+              <div style={{ flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split disable={[4, 5]} style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}>
+              <div style={{ maxWidth: 50, backgroundColor: '#eaeaea' }}>
+                Pane 1
+              </div>
+              <div style={{ maxWidth: 60 }}>
+                Pane 2
+              </div>
+              <div>
+                Pane 3
+              </div>
+              <div>
+                Pane 4
+              </div>
+              <div style={{ flex: 1 }}>
+                Pane 5
+              </div>
+            </Split>
+            <Split
+              style={{ height: 100, border: '1px solid #d5d5d5', borderRadius: 3, marginTop: 18 }}
+            >
+              <div style={{ minWidth: 60 }}>
+                test
+              </div>
+              <div  style={{ minWidth: 80, flex: 1 }}>
+                Right Pane
+              </div>
+            </Split>
+            <Split mode="vertical" visiable={false} style={{ marginTop: 18 }}>
+              <div style={{ minHeight: 45, background: '#dcdcdc' }}>
+                Header
+              </div>
+              <Split visiable={false}>
+                <div style={{ minWidth: 200, maxWidth: 200, minHeight: 120, background: '#b5b5b5' }}>
+                  Sider
+                </div>
+                <div style={{ width: '100%', background: '#ececec' }}>
+                  Content
+                </div>
+              </Split>
+              <div style={{ minHeight: 45, background: '#dcdcdc' }}>
+                Footer
+              </div>
+            </Split>
+            <div style={{ height: 20 }}></div>
+            <Split visiable={false}>
+              <div style={{ minWidth: 200, maxWidth: 200, minHeight: 85, background: '#a9a9a9' }}>
+                Sider
+              </div>
+              <Split mode="vertical" visiable={false} style={{ width: '100%' }}>
+                <div style={{ minHeight: 45, background: '#dcdcdc' }}>
+                  Header
+                </div>
+                <div style={{ minHeight: 85, background: '#b5b5b5' }}>
+                  Content
+                </div>
+                <div style={{ minHeight: 45, background: '#dcdcdc' }}>
+                  Footer
+                </div>
+              </Split>
+            </Split>
+          </React.Fragment>
+        );
+      }
+      ReactDOM.render(<Demo />, document.getElementById('container'));
+    </script>
+  </body>
+</html>
