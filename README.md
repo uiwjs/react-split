@@ -1,13 +1,11 @@
 Split 面板分割
 ===
 
-[![Build & Deploy](https://github.com/uiwjs/react-split/workflows/Build%20&%20Deploy/badge.svg)](https://github.com/uiwjs/react-split/actions)
-[![Issues](https://img.shields.io/github/issues/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/issues)
-[![Forks](https://img.shields.io/github/forks/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/network)
-[![Stars](https://img.shields.io/github/stars/uiwjs/react-split.svg)](https://github.com/uiwjs/react-split/stargazers)
-[![Release](https://img.shields.io/github/release/uiwjs/react-split)](https://github.com/uiwjs/react-split/releases)
+[![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-split.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-split)
+[![Build & Deploy](https://github.com/uiwjs/react-split/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-split/actions/workflows/ci.yml)
+[![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-split/file/README.md)
 [![npm version](https://img.shields.io/npm/v/@uiw/react-split.svg)](https://www.npmjs.com/package/@uiw/react-split)
-[![open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-split/file/README.md)
+[![Coverage Status](https://uiwjs.github.io/react-split/badges.svg)](https://uiwjs.github.io/react-split/coverage/lcov-report/)
 
 可将一块内容，分割为可以拖拽调整宽度或高度的区域。
 
@@ -406,7 +404,6 @@ const Demo = () => (
 ReactDOM.render(<Demo />, _mount_);
 ```
 
-
 ## Props
 
 ```ts
@@ -465,3 +462,17 @@ npm run released
 
 The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/uiwjs/react-split/graphs/contributors">
+  <img src="https://uiwjs.github.io/react-split/CONTRIBUTORS.svg" />
+</a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+### License
+
+Licensed under the MIT License.
