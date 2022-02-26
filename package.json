@@ -7,14 +7,18 @@
   "homepage": "https://uiwjs.github.io/react-split",
   "scripts": {
     "prepare": "npm run build",
-    "released": "npm run build && npm run doc",
+    "released": "npm run build && npm run bundle && npm run bundle:min && npm run doc",
     "doc": "kkt build --app-src ./website",
     "start": "kkt start --app-src ./website",
     "css:watch": "compile-less -d src -o esm --watch",
     "css:build": "compile-less -d src -o esm",
     "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
+    "bundle": "ncc build src/index.tsx --target web --filename split",
+    "bundle:min": "ncc build src/index.tsx --target web --filename split --minify",
     "watch": "tsbb watch & npm run css:watch",
     "build": "tsbb build && npm run css:build && npm run css:build:dist",
+    "test": "tsbb test",
+    "coverage": "tsbb test --coverage --bail",
     "type-check": "tsc --noEmit"
   },
   "repository": {
@@ -25,6 +29,7 @@
   "license": "MIT",
   "files": [
     "dist.css",
+    "dist",
     "src",
     "esm",
     "cjs"
@@ -34,21 +39,22 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
-    "@kkt/less-modules": "7.0.5",
-    "@kkt/raw-modules": "7.0.5",
-    "@kkt/scope-plugin-options": "7.0.5",
-    "@types/react": "17.0.38",
+    "@kkt/less-modules": "~7.1.1",
+    "@kkt/ncc": "~1.0.8",
+    "@kkt/raw-modules": "~7.1.1",
+    "@kkt/scope-plugin-options": "~7.1.1",
+    "@types/react": "17.0.39",
     "@types/react-dom": "17.0.11",
     "@uiw/react-code-preview": "4.0.5",
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-markdown-preview": "3.4.7",
     "@uiw/reset.css": "1.0.5",
     "compile-less-cli": "1.8.11",
-    "kkt": "7.0.5",
+    "kkt": "~7.1.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsbb": "3.5.4",
-    "uiw": "4.9.7"
+    "tsbb": "~3.7.0",
+    "uiw": "~4.12.1"
   },
   "eslintConfig": {
     "extends": [
