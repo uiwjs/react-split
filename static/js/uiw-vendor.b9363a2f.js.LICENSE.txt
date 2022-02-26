@@ -1,0 +1,18 @@
+/*!
+ * @uiw/copy-to-clipboard v1.0.12
+ * Copy to clipboard.
+ * 
+ * Copyright (c) 2021 Kenny Wang
+ * https://github.com/uiwjs/copy-to-clipboard.git
+ * 
+ * Licensed under the MIT license.
+ */
+
+/**! 
+ * @uiw/formatter v1.3.2 
+ * Get a formatted date. 
+ * 
+ * Copyright (c) 2022 Kenny Wang <wowohoo@qq.com> 
+ * https://github.com/uiwjs/date-formatter.git 
+ * Licensed under the MIT license 
+ */
