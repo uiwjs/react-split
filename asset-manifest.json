@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-split/static/css/main.98b136f9.css",
-    "main.js": "/react-split/static/js/main.6d60e3d9.js",
+    "main.js": "/react-split/static/js/main.2c43c914.js",
     "static/js/671.8f6b84fa.chunk.js": "/react-split/static/js/671.8f6b84fa.chunk.js",
     "uiw-vendor.css": "/react-split/static/css/uiw-vendor.680084f7.css",
     "uiw-vendor.js": "/react-split/static/js/uiw-vendor.b9363a2f.js",
@@ -12,7 +12,7 @@
     "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.100c3f43.js",
     "index.html": "/react-split/index.html",
     "main.98b136f9.css.map": "/react-split/static/css/main.98b136f9.css.map",
-    "main.6d60e3d9.js.map": "/react-split/static/js/main.6d60e3d9.js.map",
+    "main.2c43c914.js.map": "/react-split/static/js/main.2c43c914.js.map",
     "671.8f6b84fa.chunk.js.map": "/react-split/static/js/671.8f6b84fa.chunk.js.map",
     "uiw-vendor.680084f7.css.map": "/react-split/static/css/uiw-vendor.680084f7.css.map",
     "uiw-vendor.b9363a2f.js.map": "/react-split/static/js/uiw-vendor.b9363a2f.js.map",
@@ -31,6 +31,6 @@
     "static/js/react-vendor.6953a09f.js",
     "static/js/babel-standalone-vendor.100c3f43.js",
     "static/css/main.98b136f9.css",
-    "static/js/main.6d60e3d9.js"
+    "static/js/main.2c43c914.js"
   ]
 }
