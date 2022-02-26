@@ -177,7 +177,7 @@ export default class Split extends React.Component<SplitProps, SplitState> {
             BarCom = React.createElement('div', { ...barProps }, <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />)
           }
           return (
-            <React.Fragment>
+            <React.Fragment key={idx}>
               {BarCom}
               {React.cloneElement(element, { ...props })}
             </React.Fragment>
