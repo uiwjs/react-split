@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
+import pkg from '../../../package.json';
 import Code from './Code';
 import styles from './index.module.less';
 
@@ -67,26 +68,36 @@ export default class Markdown extends Component<MarkdownProps, MarkdownState> {
         className={styles.markdown}
         components={{
           /**
+           * bordered 边框
            * bgWhite 设置代码预览背景白色，否则为格子背景。
            * noCode 不显示代码编辑器。
            * noPreview 不显示代码预览效果。
            * noScroll 预览区域不显示滚动条。
            * codePen 显示 Codepen 按钮，要特别注意 包导入的问题，实例中的 import 主要用于 Codepen 使用。
            */
-           code: ({ inline, node, ...props }) => {
-            const { noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox } = props as any;
+          code: ({ inline, node, ...props }) => {
+            const { noPreview, bordered, noScroll, bgWhite, noCode, codePen, codeSandbox } = props as any;
             if (inline) {
               return <code {...props} />;
             }
-            const config = { noPreview, noScroll, bgWhite, noCode, codePen } as any;
+            const config = {
+              noPreview,
+              bordered,
+              noScroll,
+              bgWhite,
+              noCode,
+              codePen,
+              codeSandbox,
+            } as any;
             if (Object.keys(config).filter((name) => config[name] !== undefined).length === 0) {
               return <code {...props} />;
             }
             return (
               <Code
+                version={pkg.version}
                 code={getCodeStr(node.children)}
                 dependencies={this.dependencies}
-                {...{ noPreview, noScroll, bgWhite, noCode, codePen, codeSandbox }}
+                {...{ noPreview, bordered, noScroll, bgWhite, noCode, codePen, codeSandbox }}
               />
             );
           },
