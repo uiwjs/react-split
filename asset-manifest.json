@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/react-split/static/css/main.98b136f9.css",
-    "main.js": "/react-split/static/js/main.c5fd24bc.js",
-    "static/js/671.3f7e18d3.chunk.js": "/react-split/static/js/671.3f7e18d3.chunk.js",
+    "main.js": "/react-split/static/js/main.3a3883fe.js",
+    "static/js/671.8ae4167c.chunk.js": "/react-split/static/js/671.8ae4167c.chunk.js",
     "uiw-vendor.css": "/react-split/static/css/uiw-vendor.680084f7.css",
     "uiw-vendor.js": "/react-split/static/js/uiw-vendor.b9363a2f.js",
     "refractor-vendor.js": "/react-split/static/js/refractor-vendor.13e572b4.js",
@@ -12,8 +12,8 @@
     "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.100c3f43.js",
     "index.html": "/react-split/index.html",
     "main.98b136f9.css.map": "/react-split/static/css/main.98b136f9.css.map",
-    "main.c5fd24bc.js.map": "/react-split/static/js/main.c5fd24bc.js.map",
-    "671.3f7e18d3.chunk.js.map": "/react-split/static/js/671.3f7e18d3.chunk.js.map",
+    "main.3a3883fe.js.map": "/react-split/static/js/main.3a3883fe.js.map",
+    "671.8ae4167c.chunk.js.map": "/react-split/static/js/671.8ae4167c.chunk.js.map",
     "uiw-vendor.680084f7.css.map": "/react-split/static/css/uiw-vendor.680084f7.css.map",
     "uiw-vendor.b9363a2f.js.map": "/react-split/static/js/uiw-vendor.b9363a2f.js.map",
     "refractor-vendor.13e572b4.js.map": "/react-split/static/js/refractor-vendor.13e572b4.js.map",
@@ -31,6 +31,6 @@
     "static/js/react-vendor.6953a09f.js",
     "static/js/babel-standalone-vendor.100c3f43.js",
     "static/css/main.98b136f9.css",
-    "static/js/main.c5fd24bc.js"
+    "static/js/main.3a3883fe.js"
   ]
 }
