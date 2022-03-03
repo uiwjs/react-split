@@ -48,7 +48,7 @@
     "@uiw/react-code-preview": "4.0.5",
     "@uiw/react-github-corners": "1.5.3",
     "@uiw/react-markdown-preview": "3.4.7",
-    "@uiw/reset.css": "1.0.5",
+    "@uiw/reset.css": "1.0.6",
     "compile-less-cli": "1.8.11",
     "kkt": "~7.1.5",
     "react": "17.0.2",
