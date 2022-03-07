@@ -1,36 +1,36 @@
 {
   "files": {
     "main.css": "/react-split/static/css/main.98b136f9.css",
-    "main.js": "/react-split/static/js/main.a6496ee1.js",
+    "main.js": "/react-split/static/js/main.5a2e96f2.js",
     "static/js/671.31c5be7d.chunk.js": "/react-split/static/js/671.31c5be7d.chunk.js",
-    "uiw-vendor.css": "/react-split/static/css/uiw-vendor.680084f7.css",
-    "uiw-vendor.js": "/react-split/static/js/uiw-vendor.05898255.js",
+    "uiw-vendor.css": "/react-split/static/css/uiw-vendor.e8bb14b5.css",
+    "uiw-vendor.js": "/react-split/static/js/uiw-vendor.542cb339.js",
     "refractor-vendor.js": "/react-split/static/js/refractor-vendor.13e572b4.js",
-    "codemirror-vendor.js": "/react-split/static/js/codemirror-vendor.76e5ee65.js",
+    "codemirror-vendor.js": "/react-split/static/js/codemirror-vendor.6367eef2.js",
     "parse5-vendor.js": "/react-split/static/js/parse5-vendor.891ed035.js",
     "react-vendor.js": "/react-split/static/js/react-vendor.6953a09f.js",
-    "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.100c3f43.js",
+    "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.e8b73656.js",
     "index.html": "/react-split/index.html",
     "main.98b136f9.css.map": "/react-split/static/css/main.98b136f9.css.map",
-    "main.a6496ee1.js.map": "/react-split/static/js/main.a6496ee1.js.map",
+    "main.5a2e96f2.js.map": "/react-split/static/js/main.5a2e96f2.js.map",
     "671.31c5be7d.chunk.js.map": "/react-split/static/js/671.31c5be7d.chunk.js.map",
-    "uiw-vendor.680084f7.css.map": "/react-split/static/css/uiw-vendor.680084f7.css.map",
-    "uiw-vendor.05898255.js.map": "/react-split/static/js/uiw-vendor.05898255.js.map",
+    "uiw-vendor.e8bb14b5.css.map": "/react-split/static/css/uiw-vendor.e8bb14b5.css.map",
+    "uiw-vendor.542cb339.js.map": "/react-split/static/js/uiw-vendor.542cb339.js.map",
     "refractor-vendor.13e572b4.js.map": "/react-split/static/js/refractor-vendor.13e572b4.js.map",
-    "codemirror-vendor.76e5ee65.js.map": "/react-split/static/js/codemirror-vendor.76e5ee65.js.map",
+    "codemirror-vendor.6367eef2.js.map": "/react-split/static/js/codemirror-vendor.6367eef2.js.map",
     "parse5-vendor.891ed035.js.map": "/react-split/static/js/parse5-vendor.891ed035.js.map",
     "react-vendor.6953a09f.js.map": "/react-split/static/js/react-vendor.6953a09f.js.map",
-    "babel-standalone-vendor.100c3f43.js.map": "/react-split/static/js/babel-standalone-vendor.100c3f43.js.map"
+    "babel-standalone-vendor.e8b73656.js.map": "/react-split/static/js/babel-standalone-vendor.e8b73656.js.map"
   },
   "entrypoints": [
-    "static/css/uiw-vendor.680084f7.css",
-    "static/js/uiw-vendor.05898255.js",
+    "static/css/uiw-vendor.e8bb14b5.css",
+    "static/js/uiw-vendor.542cb339.js",
     "static/js/refractor-vendor.13e572b4.js",
-    "static/js/codemirror-vendor.76e5ee65.js",
+    "static/js/codemirror-vendor.6367eef2.js",
     "static/js/parse5-vendor.891ed035.js",
     "static/js/react-vendor.6953a09f.js",
-    "static/js/babel-standalone-vendor.100c3f43.js",
+    "static/js/babel-standalone-vendor.e8b73656.js",
     "static/css/main.98b136f9.css",
-    "static/js/main.a6496ee1.js"
+    "static/js/main.5a2e96f2.js"
   ]
 }
