@@ -34,7 +34,7 @@ export default (
       })
     );
     conf = mdCodeModulesLoader(conf);
-
+    conf.module!.exprContextCritical = false;
     if (env === 'production') {
       conf.module!.exprContextCritical = false;
       conf.output = { ...conf.output, publicPath: './' };
