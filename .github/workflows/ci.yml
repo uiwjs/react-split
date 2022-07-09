@@ -109,3 +109,7 @@ jobs:
           path: package.json
           data: |
             { "name": "@uiwjs/react-split" }
+
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
