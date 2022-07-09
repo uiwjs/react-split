@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-split/static/css/main.6b86bd7c.css",
-    "main.js": "/react-split/static/js/main.939f4004.js",
+    "main.js": "/react-split/static/js/main.d150ceb9.js",
     "refractor-vendor.js": "/react-split/static/js/refractor-vendor.a603eb7f.js",
     "uiw-vendor.css": "/react-split/static/css/uiw-vendor.0aa6b079.css",
     "uiw-vendor.js": "/react-split/static/js/uiw-vendor.bee992df.js",
@@ -10,7 +10,7 @@
     "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.df9d64db.js",
     "index.html": "/react-split/index.html",
     "main.6b86bd7c.css.map": "/react-split/static/css/main.6b86bd7c.css.map",
-    "main.939f4004.js.map": "/react-split/static/js/main.939f4004.js.map",
+    "main.d150ceb9.js.map": "/react-split/static/js/main.d150ceb9.js.map",
     "refractor-vendor.a603eb7f.js.map": "/react-split/static/js/refractor-vendor.a603eb7f.js.map",
     "uiw-vendor.0aa6b079.css.map": "/react-split/static/css/uiw-vendor.0aa6b079.css.map",
     "uiw-vendor.bee992df.js.map": "/react-split/static/js/uiw-vendor.bee992df.js.map",
@@ -26,6 +26,6 @@
     "static/js/react-vendor.1fc3e10b.js",
     "static/js/babel-standalone-vendor.df9d64db.js",
     "static/css/main.6b86bd7c.css",
-    "static/js/main.939f4004.js"
+    "static/js/main.d150ceb9.js"
   ]
 }
