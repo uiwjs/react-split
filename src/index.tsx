@@ -6,23 +6,24 @@ export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 
   className?: string;
   prefixCls?: string;
   /**
-   * 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定
+   * Drag width/height change callback function,
+   * the width or height is determined according to the mode parameter
    */
   onDragging?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /** 拖拽结束的回调函数 */
+  /** Callback function for dragging end */
   onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /** 支持自定义拖拽工具栏 */
+  /** Support custom drag and drop toolbar */
   renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
-  /** 设置拖拽的工具条，为线条样式。 */
+  /** Set the drag and drop toolbar as a line style. */
   lineBar?: boolean;
-  /** 设置拖拽的工具条，是否可见 */
+  /** Set the dragged toolbar, whether it is visible or not */
   visiable?: boolean | number[];
   /**
-   * 设置拖拽的工具条，禁用
+   * Set the drag and drop toolbar, disable
    */
   disable?: boolean | number[];
   /**
-   * 类型，可选值为 `horizontal` 或 `vertical`
+   * type, optional `horizontal` or `vertical`
    */
   mode?: 'horizontal' | 'vertical';
 }
