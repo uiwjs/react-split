@@ -80,7 +80,7 @@ jobs:
       uses: JS-DevTools/npm-publish@v1
       with:
         token: ${{ secrets.NPM_TOKEN }}
-        package: ./core/package.json
+        package: ./package.json
 
 
     outputs:
@@ -100,13 +100,12 @@ jobs:
 
       - run: npm install
       - run: npm run build
-      - run: npm run doc
       - run: npm run bundle
       - run: npm run bundle:min
 
       - name: "Modify @uiw/react-split => @uiwjs/react-split"
         uses: jaywcjlove/github-action-package@main
         with:
-          path: core/package.json
+          path: package.json
           data: |
             { "name": "@uiwjs/react-split" }
