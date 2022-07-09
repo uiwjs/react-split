@@ -9,25 +9,25 @@ Split 面板分割
 [![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/react-split)
 [![Repo Dependents](https://badgen.net/github/dependents-repo/uiwjs/react-split)](https://github.com/uiwjs/react-split/network/dependents)
 
-A piece of content can be divided into areas that can be dragged to adjust the width or height.
+可将一块内容，分割为可以拖拽调整宽度或高度的区域。
 
 ```jsx
 import { Split } from 'uiw';
 ```
 
-`@uiw/react-split` extracted from the component library `uiw` can be used alone.
+从组件库 `uiw` 中抽离出来的 `@uiw/react-split`，可以单独使用。
 
 ```jsx
 import Split from '@uiw/react-split';
 ```
 
-### Basic usage
+### 基础用法
 
-> ~~By setting the `minWidth` style of the child node, you can set the minimum drag width value. By setting the child node style `flexBasis` style, you can set the proportion width of the default split content. ~~
+> ~~通过设置子节点的 `minWidth` 样式，即可设置拖拽最小宽度值。通过设置子节点样式 `flexBasis` 样式即可设置默认分割内容的占比宽度。~~
 
-- Fixed initial width or height, which can be calculated by setting the child node, style `width: '80%'` to 100% width.
-- Drag to the minimum width, you can achieve the effect by setting the child node style `minWidth: 30`.
-- By default, the style `width` is not set, and a child node style needs to be set to `flex: 1` to adapt
+- 固定初始宽度或者高度，可通过设置子节点，样式 `width: '80%'` 宽度百分百来计算。
+- 拖拽至最小宽度，可通过设置子节点样式 `minWidth: 30`，来达到效果
+- 默认情况下，不设置样式 `width`，需要将某个子节点样式设为 `flex: 1`，来自适应
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -63,9 +63,9 @@ const Demo = () => (
 export default Demo
 ```
 
-### Available for layout
+### 可用于布局
 
-Setting `visiable={false}` disables the drag bar, which can be used for layout.
+设置 `visiable={false}` 禁用拖拽栏，可用于布局。
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -112,7 +112,7 @@ export default Demo
 
 ```
 
-### multi-column split
+### 多栏分割
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -138,7 +138,7 @@ export default Demo
 
 ```
 
-### line drag
+### 线条拖拽
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -177,7 +177,7 @@ export default Demo
 ;
 ```
 
-### vertical split
+### 垂直分割
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -197,7 +197,7 @@ export default Demo
 
 ```
 
-### nested use
+### 嵌套使用
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -227,9 +227,9 @@ export default Demo
 
 ```
 
-### Drag tool not showing
+### 拖拽工具不显示
 
-The following example sets whether the drag tool is visible by setting the value of `visiable`.
+下面实例通过设置 `visiable` 的值来设置拖拽工具是否可见
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -268,9 +268,9 @@ export default Demo
 
 ```
 
-### Disable drag and drop
+### 禁用拖拽
 
-Disable drag tool dragging by setting the value of `disable`.
+通过设置 `disable` 的值，禁用拖拽工具拖拽。
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -317,9 +317,9 @@ export default Demo
 
 ```
 
-### drawer
+### 抽屉
 
-Draggable left column width.
+可拖拽左边栏宽度。
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -373,7 +373,7 @@ export default Demo
 
 ```
 
-### Support custom drag and drop toolbar
+### 支持自定义拖拽工具栏
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -411,24 +411,29 @@ export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 
   className?: string;
   prefixCls?: string;
   /**
-   * Drag width/height change callback function,
-   * the width or height is determined according to the mode parameter
+   * 拖拽宽度/高度变化回调函数，宽度或者高度根据 mode 参数来确定
    */
   onDragging?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /** Callback function for dragging end */
+  /**
+   * 拖拽结束的回调函数
+   */
   onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
-  /** Support custom drag and drop toolbar */
+  /** 支持自定义拖拽工具栏 */
   renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
-  /** Set the drag and drop toolbar as a line style. */
+  /**
+   * 设置拖拽的工具条，为线条样式。
+   */
   lineBar?: boolean;
-  /** Set the dragged toolbar, whether it is visible or not */
+  /**
+   * 设置拖拽的工具条，是否可见
+   */
   visiable?: boolean | number[];
   /**
-   * Set the drag and drop toolbar, disable
+   * 设置拖拽的工具条，禁用
    */
   disable?: boolean | number[];
   /**
-   * type, optional `horizontal` or `vertical`
+   * 类型，可选值为 `horizontal` 或 `vertical`
    */
   mode?: 'horizontal' | 'vertical';
 }
