@@ -1,4 +1,4 @@
-Split 面板分割
+Split
 ===
 
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-split.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-split)
@@ -465,7 +465,7 @@ As always, thanks to our amazing contributors!
   <img src="https://uiwjs.github.io/react-split/CONTRIBUTORS.svg" />
 </a>
 
-Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+Made with [action-contributors](https://github.com/jaywcjlove/github-action-contributors).
 
 ### License
 
