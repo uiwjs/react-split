@@ -28,9 +28,8 @@ import Split from '@uiw/react-split';
 - 拖拽至最小宽度，可通过设置子节点样式 `minWidth: 30`，来达到效果
 - 默认情况下，不设置样式 `width`，需要将某个子节点样式设为 `flex: 1`，来自适应
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -60,16 +59,15 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
 ```
 
 ### 可用于布局
 
 设置 `visiable={false}` 禁用拖拽栏，可用于布局。
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -109,14 +107,14 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 多栏分割
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -135,14 +133,14 @@ const Demo = () => (
     </div>
   </Split>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 线条拖拽
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -174,14 +172,14 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+;
 ```
 
 ### 垂直分割
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -194,14 +192,14 @@ const Demo = () => (
     </div>
   </Split>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 嵌套使用
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -224,16 +222,16 @@ const Demo = () => (
     </div>
   </Split>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 拖拽工具不显示
 
 下面实例通过设置 `visiable` 的值来设置拖拽工具是否可见
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -265,16 +263,16 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 禁用拖拽
 
 通过设置 `disable` 的值，禁用拖拽工具拖拽。
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -314,17 +312,16 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 抽屉
 
 可拖拽左边栏宽度。
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Split from '@uiw/react-split';
 import { Menu, Button } from 'uiw';
 
@@ -371,14 +368,14 @@ class Demo extends React.Component {
     )
   }
 }
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
+
 ```
 
 ### 支持自定义拖拽工具栏
 
-<!--rehype:bgWhite=true&codeSandbox=true&codePen=true-->
-```jsx
-import ReactDOM from 'react-dom';
+```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
+import React from 'react';
 import Split from '@uiw/react-split';
 
 const Demo = () => (
@@ -402,7 +399,7 @@ const Demo = () => (
     </Split>
   </div>
 );
-ReactDOM.render(<Demo />, _mount_);
+export default Demo
 ```
 
 ## Props

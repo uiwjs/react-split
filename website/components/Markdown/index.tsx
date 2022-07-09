@@ -1,108 +1,54 @@
-import { Component } from 'react';
 import MarkdownPreview from '@uiw/react-markdown-preview';
-import pkg from '../../../package.json';
-import Code from './Code';
 import styles from './index.module.less';
+import data from "../../../README.md"
+import { useEffect, useRef } from "react"
+import CodeLayout from 'react-code-preview-layout';
+import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
+import { CodeComponent, ReactMarkdownNames } from 'react-markdown/lib/ast-to-react';
+import { getToolbarExtra } from "./Code"
+const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...props }) => {
+  const $dom = useRef<HTMLDivElement>(null);
+  const { 'data-meta': meta, ...rest } = props as any;
 
-interface MarkdownProps { }
-interface MarkdownState {
-  mdStr: string;
-}
-
-const getCodeStr = (data: any[] = [], code: string = '') => {
-  data.forEach((node) => {
-    if (node.type === 'text') {
-      code += node.value;
-    } else if (node.children && Array.isArray(node.children)) {
-      code += getCodeStr(node.children);
+  useEffect(() => {
+    if ($dom.current) {
+      const parentElement = $dom.current.parentElement;
+      if (parentElement && parentElement.parentElement) {
+        parentElement.parentElement.replaceChild($dom.current, parentElement);
+      }
     }
-  });
-  return code;
-};
+  }, [$dom]);
 
-/**
- * 代码注释参数
- * 
- * ```md
- * <!--DemoStart,bgWhite,noCode,noPreview,noScroll,codePen-->
- * ```
- * 参数用英文逗号隔开
- * 
- * - `bgWhite` 设置代码预览背景白色，否则为格子背景。
- * - `noCode` 不显示代码编辑器。 
- * - `noPreview` 不显示代码预览效果。
- * - `noScroll` 预览区域不显示滚动条。
- * - `codePen` 显示 Codepen 按钮，要特别注意 `包导入的问题`，实例中的 `import` 主要用于 Codepen 使用。
- */
-export interface OptionsMarkdown {
-  bgWhite?: boolean;
-  noCode?: boolean;
-  noPreview?: boolean;
-  noScroll?: boolean;
-  codePen?: boolean;
-};
+  if (inline || !isMeta(meta)) {
+    return <code {...props} />;
+  }
 
-export default class Markdown extends Component<MarkdownProps, MarkdownState> {
-  constructor(props:MarkdownProps) {
-    super(props);
-    this.state = {
-      mdStr: '',
-    };
-  }
-  getMdStr?: () => Promise<typeof import("*.md")>;
-  dependencies?: any;
-  componentDidMount() {
-    if (this.getMdStr) {
-      this.getMdStr().then((str: any) => {
-        this.setState({
-          mdStr: str.default || str,
-        });
-      });
-    }
-  }
-  render() {
+  const line = node.position?.start.line;
+  const metaId = getMetaId(meta) || String(line);
+  const Child = data.components[`${metaId}`];
+  if (metaId && typeof Child === 'function') {
+    const code = data.data[metaId].value || '';
+    const param = getURLParameters(meta);
     return (
-      <MarkdownPreview
-        style={{ padding: '20px 26px' }}
-        source={this.state.mdStr}
-        className={styles.markdown}
-        components={{
-          /**
-           * bordered 边框
-           * bgWhite 设置代码预览背景白色，否则为格子背景。
-           * noCode 不显示代码编辑器。
-           * noPreview 不显示代码预览效果。
-           * noScroll 预览区域不显示滚动条。
-           * codePen 显示 Codepen 按钮，要特别注意 包导入的问题，实例中的 import 主要用于 Codepen 使用。
-           */
-          code: ({ inline, node, ...props }) => {
-            const { noPreview, bordered, noScroll, bgWhite, noCode, codePen, codeSandbox } = props as any;
-            if (inline) {
-              return <code {...props} />;
-            }
-            const config = {
-              noPreview,
-              bordered,
-              noScroll,
-              bgWhite,
-              noCode,
-              codePen,
-              codeSandbox,
-            } as any;
-            if (Object.keys(config).filter((name) => config[name] !== undefined).length === 0) {
-              return <code {...props} />;
-            }
-            return (
-              <Code
-                version={pkg.version}
-                code={getCodeStr(node.children)}
-                dependencies={this.dependencies}
-                {...{ noPreview, bordered, noScroll, bgWhite, noCode, codePen, codeSandbox }}
-              />
-            );
-          },
-        }}
-      />
-    )
+      <CodeLayout ref={$dom}
+        toolbarExtra={getToolbarExtra(code, param.codePen === "true", param.codeSandbox === "true")}
+        toolbar={param.title || 'Example'} background={param.background} code={<pre {...rest} />} text={code}>
+        <Child />
+      </CodeLayout>
+    );
   }
+  return <code {...rest} />;
+};
+
+export default function Markdown() {
+  return (
+    <MarkdownPreview
+      style={{ padding: '20px 26px' }}
+      source={data.source}
+      className={styles.markdown}
+      components={{
+        code: CodePreview
+      }}
+    />
+  );
 }
