@@ -5,6 +5,7 @@ import lessModules from '@kkt/less-modules';
 import rawModules from '@kkt/raw-modules';
 import scopePluginOptions from '@kkt/scope-plugin-options';
 import pkg from './package.json';
+import { mdCodeModulesLoader } from "markdown-react-code-preview-loader";
 
 export default (conf: WebpackConfiguration, env: 'production' | 'development', options: LoaderConfOptions) => {
   conf = lessModules(conf, env, options);
@@ -30,7 +31,8 @@ export default (conf: WebpackConfiguration, env: 'production' | 'development', o
     conf.plugins!.push(new webpack.DefinePlugin({
       VERSION: JSON.stringify(pkg.version),
     }));
-
+    conf = mdCodeModulesLoader(conf);
+	
     if (env === 'production') {
       conf.module!.exprContextCritical = false;
       conf.output = { ...conf.output, publicPath: './' };
