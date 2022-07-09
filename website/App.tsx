@@ -3,10 +3,12 @@ import GitHubCorners from '@uiw/react-github-corners';
 import '@uiw/reset.css';
 import './App.css';
 import Page from './components/Markdown';
+import "@wcj/dark-mode"
 
 const App: React.FC = () => {
   return (
     <div className="App">
+      <dark-mode permanent></dark-mode>
       <GitHubCorners zIndex={9999} fixed href="https://github.com/uiwjs/react-split" />
       <header className="App-header">
         <h1 className="title">React Split</h1>

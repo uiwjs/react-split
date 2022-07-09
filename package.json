@@ -39,10 +39,11 @@
     "react-dom": ">=16.8.0"
   },
   "devDependencies": {
+    "@wcj/dark-mode": "^1.0.14",
     "@uiw/react-codesandbox": "^1.1.5",
     "@uiw/react-codepen": "^1.0.2",
     "markdown-react-code-preview-loader": "^2.1.2",
-    "react-code-preview-layout": "^2.0.4",
+    "react-code-preview-layout": "^2.0.6",
     "@kkt/less-modules": "~7.1.1",
     "@kkt/ncc": "~1.0.8",
     "@kkt/raw-modules": "~7.1.1",

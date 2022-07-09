@@ -21,3 +21,8 @@
   max-width: 702px;
   padding: 25px 0 27px;
 }
+dark-mode {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}

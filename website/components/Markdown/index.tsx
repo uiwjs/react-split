@@ -30,9 +30,10 @@ const CodePreview: CodeComponent | ReactMarkdownNames = ({ inline, node, ...prop
     const code = data.data[metaId].value || '';
     const param = getURLParameters(meta);
     return (
-      <CodeLayout ref={$dom}
+      <CodeLayout
+        ref={$dom}
         toolbarExtra={getToolbarExtra(code, param.codePen === "true", param.codeSandbox === "true")}
-        toolbar={param.title || 'Example'} background={param.background} code={<pre {...rest} />} text={code}>
+        toolbar={param.title || 'Example'} background={"transparent"} code={<pre {...rest} />} text={code}>
         <Child />
       </CodeLayout>
     );
