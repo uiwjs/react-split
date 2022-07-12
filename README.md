@@ -23,7 +23,7 @@ import Split from '@uiw/react-split';
 
 ### Basic usage
 
-> ~~By setting the `minWidth` style of the child node, you can set the minimum drag width value. By setting the child node style `flexBasis` style, you can set the proportion width of the default split content. ~~
+> ~~By setting the `minWidth` style of the child node, you can set the minimum drag width value. By setting the child node style `flexBasis` style, you can set the proportion width of the default split content.~~
 
 - Fixed initial width or height, which can be calculated by setting the child node, style `width: '80%'` to 100% width.
 - Drag to the minimum width, you can achieve the effect by setting the child node style `minWidth: 30`.
