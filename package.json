@@ -51,7 +51,7 @@
     "@types/react": "~18.0.15",
     "@types/react-dom": "~18.0.6",
     "@uiw/react-github-corners": "~1.5.3",
-    "@uiw/react-markdown-preview": "~4.0.22",
+    "@uiw/react-markdown-preview": "~4.1.0",
     "@uiw/reset.css": "~1.0.6",
     "compile-less-cli": "~1.8.11",
     "kkt": "~7.2.0",
