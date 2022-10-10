@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
@@ -87,7 +87,7 @@ jobs:
       successful: ${{steps.create_tag.outputs.successful }}
 
   github-package:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     needs: build-deploy
     if: needs.build-deploy.outputs.successful
     steps:
