@@ -31,6 +31,7 @@
     "src/**/*.{ts,tsx,less}",
     "dist.css",
     "dist",
+    "README-zh.mdd",
     "esm",
     "cjs"
   ],
