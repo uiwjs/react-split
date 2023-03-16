@@ -48,7 +48,7 @@
     "@kkt/less-modules": "~7.2.0",
     "@kkt/ncc": "~1.0.8",
     "@kkt/raw-modules": "~7.2.0",
-    "@kkt/scope-plugin-options": "~7.2.0",
+    "@kkt/scope-plugin-options": "~7.4.0",
     "@types/react": "~18.0.15",
     "@types/react-dom": "~18.0.6",
     "@uiw/react-github-corners": "~1.5.3",
