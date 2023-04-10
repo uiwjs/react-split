@@ -23,6 +23,7 @@ jobs:
       - run: npm run bundle:min
       - run: npm run coverage
       - run: npm run type-check
+      - run: cp -rp coverage build
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main
