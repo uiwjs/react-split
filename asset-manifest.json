@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/react-split/static/css/main.383e31fa.css",
-    "main.js": "/react-split/static/js/main.0a6f2a44.js",
+    "main.css": "/react-split/static/css/main.85b74b77.css",
+    "main.js": "/react-split/static/js/main.7ec78dc5.js",
     "refractor-vendor.js": "/react-split/static/js/refractor-vendor.c811f3c6.js",
     "uiw-vendor.css": "/react-split/static/css/uiw-vendor.d0e36fd5.css",
-    "uiw-vendor.js": "/react-split/static/js/uiw-vendor.fe0f784f.js",
-    "parse5-vendor.js": "/react-split/static/js/parse5-vendor.8681ce08.js",
+    "uiw-vendor.js": "/react-split/static/js/uiw-vendor.22b8131b.js",
+    "parse5-vendor.js": "/react-split/static/js/parse5-vendor.41ff5fce.js",
     "react-vendor.js": "/react-split/static/js/react-vendor.9a6ce335.js",
     "babel-standalone-vendor.js": "/react-split/static/js/babel-standalone-vendor.3c1512c9.js",
     "index.html": "/react-split/index.html",
-    "main.383e31fa.css.map": "/react-split/static/css/main.383e31fa.css.map",
-    "main.0a6f2a44.js.map": "/react-split/static/js/main.0a6f2a44.js.map",
+    "main.85b74b77.css.map": "/react-split/static/css/main.85b74b77.css.map",
+    "main.7ec78dc5.js.map": "/react-split/static/js/main.7ec78dc5.js.map",
     "refractor-vendor.c811f3c6.js.map": "/react-split/static/js/refractor-vendor.c811f3c6.js.map",
     "uiw-vendor.d0e36fd5.css.map": "/react-split/static/css/uiw-vendor.d0e36fd5.css.map",
-    "uiw-vendor.fe0f784f.js.map": "/react-split/static/js/uiw-vendor.fe0f784f.js.map",
-    "parse5-vendor.8681ce08.js.map": "/react-split/static/js/parse5-vendor.8681ce08.js.map",
+    "uiw-vendor.22b8131b.js.map": "/react-split/static/js/uiw-vendor.22b8131b.js.map",
+    "parse5-vendor.41ff5fce.js.map": "/react-split/static/js/parse5-vendor.41ff5fce.js.map",
     "react-vendor.9a6ce335.js.map": "/react-split/static/js/react-vendor.9a6ce335.js.map",
     "babel-standalone-vendor.3c1512c9.js.map": "/react-split/static/js/babel-standalone-vendor.3c1512c9.js.map"
   },
   "entrypoints": [
     "static/js/refractor-vendor.c811f3c6.js",
     "static/css/uiw-vendor.d0e36fd5.css",
-    "static/js/uiw-vendor.fe0f784f.js",
-    "static/js/parse5-vendor.8681ce08.js",
+    "static/js/uiw-vendor.22b8131b.js",
+    "static/js/parse5-vendor.41ff5fce.js",
     "static/js/react-vendor.9a6ce335.js",
     "static/js/babel-standalone-vendor.3c1512c9.js",
-    "static/css/main.383e31fa.css",
-    "static/js/main.0a6f2a44.js"
+    "static/css/main.85b74b77.css",
+    "static/js/main.7ec78dc5.js"
   ]
 }
