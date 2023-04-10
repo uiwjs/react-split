@@ -1,9 +1,9 @@
 import React from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
 import '@uiw/reset.css';
+import "@wcj/dark-mode"
 import './App.css';
 import Page from './components/Markdown';
-import "@wcj/dark-mode"
 
 const App: React.FC = () => {
   return (

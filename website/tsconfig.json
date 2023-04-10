@@ -1,6 +1,6 @@
 {
   "extends": "../tsconfig",
-  "include": ["../src"],
+  "include": ["./"],
   "compilerOptions": {
     "baseUrl": ".",
     "emitDeclarationOnly": true,
