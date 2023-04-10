@@ -44,7 +44,7 @@
     "@uiw/react-codesandbox": "^1.1.5",
     "@uiw/react-codepen": "^1.0.2",
     "markdown-react-code-preview-loader": "^2.1.2",
-    "react-code-preview-layout": "^2.0.6",
+    "react-code-preview-layout": "^3.0.0",
     "@kkt/less-modules": "^7.4.9",
     "@kkt/ncc": "~1.0.8",
     "@kkt/raw-modules": "^7.4.9",
