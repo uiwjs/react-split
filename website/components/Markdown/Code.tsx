@@ -1,6 +1,6 @@
-import pkg from '../../../package.json';
 import Codepen from '@uiw/react-codepen';
 import Codesandbox from '@uiw/react-codesandbox';
+import pkg from '../../../package.json';
 const version = pkg.version
 
 

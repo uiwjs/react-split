@@ -2,27 +2,66 @@ import React from 'react';
 import GitHubCorners from '@uiw/react-github-corners';
 import '@uiw/reset.css';
 import "@wcj/dark-mode"
-import './App.css';
+import { styled } from 'goober';
 import Page from './components/Markdown';
+
+const Wrapper = styled('div')`
+  dark-mode {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+  }
+`;
+
+const Title = styled('h1')`
+  text-align: center;
+  font-size: 2em;
+  font-weight: 600;
+`;
+
+const Header = styled('header')`
+  background-color: #282c34;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const Anchor = styled('a')`
+  color: #09d3ac;
+`;
+
+const Details = styled('p')`
+  max-width: 702px;
+  padding: 25px 0 27px;
+`;
+
+const Content= styled('div')`
+  max-width: 980px;
+  margin: 0 auto;
+`;
 
 const App: React.FC = () => {
   return (
-    <div className="App">
+    <Wrapper>
       <dark-mode permanent></dark-mode>
       <GitHubCorners zIndex={9999} fixed href="https://github.com/uiwjs/react-split" />
-      <header className="App-header">
-        <h1 className="title">React Split</h1>
-        <a className="App-link" href="https://github.com/uiwjs/react-split" target="_blank" rel="noopener noreferrer">
+      <Header>
+        <Title className="title">React Split</Title>
+        <Anchor className="App-link" href="https://github.com/uiwjs/react-split" target="_blank" rel="noopener noreferrer">
           Fork on Github
-        </a>
-        <p>
+        </Anchor>
+        <Details>
           A piece of view can be divided into areas where the width or height can be adjusted by dragging.
-        </p>
-      </header>
-      <div style={{ maxWidth: 980, margin: '0 auto' }}>
+        </Details>
+      </Header>
+      <Content>
         <Page />
-      </div>
-    </div>
+      </Content>
+    </Wrapper>
   );
 }
 

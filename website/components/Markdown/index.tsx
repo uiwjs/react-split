@@ -2,7 +2,7 @@ import MarkdownPreview from '@uiw/react-markdown-preview';
 import { Root, Element, RootContent } from 'hast';
 import CodeLayout from 'react-code-preview-layout';
 import { getMetaId, isMeta, getURLParameters } from 'markdown-react-code-preview-loader';
-import styles from './index.module.less';
+import { styled } from 'goober';
 import data from "../../../README.md"
 import { getToolbarExtra } from "./Code"
 
@@ -10,12 +10,25 @@ const Preview = CodeLayout.Preview;
 const Code = CodeLayout.Code;
 const Toolbar = CodeLayout.Toolbar;
 
+const MarkdownWrp = styled(MarkdownPreview)`
+  padding: 20px 26px;
+  pre[data-type='rehyp'] {
+    overflow: initial;
+    font-size: initial;
+    line-height: initial;
+
+    white-space: initial;
+    word-spacing: initial;
+    word-break: initial;
+    word-wrap: initial;
+  }
+`;
+
 export default function Markdown() {
   return (
-    <MarkdownPreview
+    <MarkdownWrp
       style={{ padding: '20px 26px' }}
       source={data.source}
-      className={styles.markdown}
       rehypeRewrite={(
         node: Root | RootContent,
         index: number,
