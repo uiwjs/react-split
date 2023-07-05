@@ -339,7 +339,7 @@ class Demo extends React.Component {
     });
   }
   render() {
-    const styl = {};
+    const styl = { lineHeight: 0 };
     if (this.state.width === 0) {
       styl.width = `0%`;
     } else {
