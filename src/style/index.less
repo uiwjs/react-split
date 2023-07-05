@@ -4,12 +4,14 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+  --w-split-bar-shadow: #d5d5d5;
+  --w-split-bar-shadow-disable: #d5d5d5;
   &-bar {
     z-index: 10;
     position: relative;
     justify-content: center;
     display: flex;
-    background: rgb(248, 248, 249);
+    background: var(--w-split-bar-background, rgb(248, 248, 249));
     user-select: none;
     &::before, &::after {
       content: '';
@@ -21,7 +23,7 @@
     }
     &:hover:not(.disable) {
       transition: background-color .3s;
-      background: #ecf7ff;
+      background: var(--w-split-bar-hover-background, #ecf7ff);
     }
   }
   &.dragging &-pane {
@@ -45,11 +47,11 @@
     cursor: col-resize;
     width: 5px;
     flex-direction: column;
-    box-shadow: inset 1px 0 0 0 #d5d5d5, 1px 0 0 0 #d5d5d5;
+    box-shadow: inset 1px 0 0 0 var(--w-split-bar-shadow), 1px 0 0 0 var(--w-split-bar-shadow);
     &::before, &::after {
       height: 3px;
       width: 100%;
-      box-shadow: inset 0 1px 0 0 #d5d5d5, 0 1px 0 0 #d5d5d5;
+      box-shadow: inset 0 1px 0 0 var(--w-split-bar-shadow), 0 1px 0 0 var(--w-split-bar-shadow);
     }
     &::before {
       margin-top: -1px;
@@ -58,7 +60,7 @@
       margin-top: 3px;
     }
     &.disable {
-      box-shadow: inset 1px 0 0 0 #e6e6e6, 1px 0 0 0 #eaeaea !important;
+      box-shadow: inset 1px 0 0 0 var(--w-split-bar-shadow-disable), 1px 0 0 0 var(--w-split-bar-shadow-disable) !important;
     }
   }
   &-vertical {
@@ -70,14 +72,14 @@
     height: 5px;
     align-items: center;
     flex-direction: row;
-    box-shadow: inset 0 1px 0 0 #d5d5d5, 0 1px 0 0 #d5d5d5;
+    box-shadow: inset 0 1px 0 0 var(--w-split-bar-shadow), 0 1px 0 0 var(--w-split-bar-shadow);
     &.disable {
-      box-shadow: inset 0 1px 0 0 #e6e6e6, 0 1px 0 0 #eaeaea !important;
+      box-shadow: inset 0 1px 0 0 var(--w-split-bar-shadow-disable), 0 1px 0 0 var(--w-split-bar-shadow-disable) !important;
     }
     &::before, &::after {
       height: 100%;
       width: 3px;
-      box-shadow: inset 1px 0 0 0 #d5d5d5, 1px 0 0 0 #d5d5d5;
+      box-shadow: inset 1px 0 0 0 var(--w-split-bar-shadow), 1px 0 0 0 var(--w-split-bar-shadow);
     }
     &::before {
       margin-left: -1px;
@@ -98,7 +100,7 @@
   &-vertical > &-line-bar:hover,
   &-horizontal > &-line-bar:hover {
     &::before {
-      border-color: #008EF0;
+      background: var(--w-split-line-bar-hover-border-color, #008EF0);
     }
   }
   &-vertical > &-line-bar {
@@ -114,7 +116,7 @@
         margin-bottom: -6px;
         height: 6px;
         &::after {
-          background-color: #008EF0;
+          background: var(--w-split-line-bar-active-background, #008EF0);
         }
       }
       &::after {
@@ -136,7 +138,7 @@
         margin-right: -6px;
         width: 6px;
         &::after {
-          background-color: #008EF0;
+          background: var(--w-split-line-bar-active-background, #008EF0);
         }
       }
       &::after {
@@ -158,7 +160,7 @@
       &::after {
         content: '';
         display: block;
-        background-color: #d5d5d5;
+        background-color: var(--w-split-line-bar-background, #d5d5d5);
       }
     }
   }
