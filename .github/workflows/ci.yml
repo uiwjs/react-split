@@ -85,33 +85,33 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   
 
-    outputs:
-      successful: ${{steps.create_tag.outputs.successful }}
+  #   outputs:
+  #     successful: ${{steps.create_tag.outputs.successful }}
 
-  github-package:
-    runs-on: ubuntu-latest
-    needs: build-deploy
-    if: needs.build-deploy.outputs.successful
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com
-          scope: '@uiwjs'
+  # github-package:
+  #   runs-on: ubuntu-latest
+  #   needs: build-deploy
+  #   if: needs.build-deploy.outputs.successful
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16
+  #         registry-url: https://npm.pkg.github.com
+  #         scope: '@uiwjs'
 
-      - run: npm install
-      - run: npm run build
-      - run: npm run bundle
-      - run: npm run bundle:min
+  #     - run: npm install
+  #     - run: npm run build
+  #     - run: npm run bundle
+  #     - run: npm run bundle:min
 
-      - name: "Modify @uiw/react-split => @uiwjs/react-split"
-        uses: jaywcjlove/github-action-package@main
-        with:
-          path: package.json
-          data: |
-            { "name": "@uiwjs/react-split" }
+  #     - name: "Modify @uiw/react-split => @uiwjs/react-split"
+  #       uses: jaywcjlove/github-action-package@main
+  #       with:
+  #         path: package.json
+  #         data: |
+  #           { "name": "@uiwjs/react-split" }
 
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+  #     - run: npm publish
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
