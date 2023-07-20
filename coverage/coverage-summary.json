@@ -1,3 +1,2 @@
-{"total": {"lines":{"total":82,"covered":24,"skipped":0,"pct":29.26},"statements":{"total":82,"covered":24,"skipped":0,"pct":29.26},"functions":{"total":9,"covered":6,"skipped":0,"pct":66.66},"branches":{"total":81,"covered":21,"skipped":0,"pct":25.92},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"}}
-,"/home/runner/work/react-split/react-split/src/index.tsx": {"lines":{"total":82,"covered":24,"skipped":0,"pct":29.26},"functions":{"total":9,"covered":6,"skipped":0,"pct":66.66},"statements":{"total":82,"covered":24,"skipped":0,"pct":29.26},"branches":{"total":81,"covered":21,"skipped":0,"pct":25.92}}
+{"total": {"lines":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"},"statements":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"},"functions":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"},"branches":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"},"branchesTrue":{"total":0,"covered":0,"skipped":0,"pct":"Unknown"}}
 }
