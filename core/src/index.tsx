@@ -1,7 +1,7 @@
 import React from 'react';
 import './style/index.less';
 
-export interface SplitProps extends  Omit<React.HTMLAttributes<HTMLDivElement>, 'onDragEnd'> {
+export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDragEnd'> {
   style?: React.CSSProperties;
   className?: string;
   prefixCls?: string;
@@ -36,10 +36,10 @@ export default class Split extends React.Component<SplitProps, SplitState> {
     prefixCls: 'w-split',
     visiable: true,
     mode: 'horizontal',
-  }
+  };
   public state: SplitState = {
     dragging: false,
-  }
+  };
   public warpper!: HTMLDivElement | null;
   public paneNumber!: number;
   public startX!: number;
@@ -143,39 +143,55 @@ export default class Split extends React.Component<SplitProps, SplitState> {
     this.setState({ dragging: false });
   }
   render() {
-    const { prefixCls, className, children, mode, visiable, renderBar, lineBar, disable, onDragEnd, onDragging, ...other } = this.props;
+    const {
+      prefixCls,
+      className,
+      children,
+      mode,
+      visiable,
+      renderBar,
+      lineBar,
+      disable,
+      onDragEnd,
+      onDragging,
+      ...other
+    } = this.props;
     const { dragging } = this.state;
-    const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null].filter(Boolean)
-    .join(' ')
-    .trim();
+    const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null]
+      .filter(Boolean)
+      .join(' ')
+      .trim();
     const child = React.Children.toArray(children);
     return (
-      <div className={cls} {...other} ref={node => this.warpper = node}>
+      <div className={cls} {...other} ref={(node) => (this.warpper = node)}>
         {React.Children.map(child, (element: any, idx: number) => {
           const props = Object.assign({}, element.props, {
-            className: [`${prefixCls}-pane`, element.props.className].filter(Boolean)
-            .join(' ')
-            .trim(),
+            className: [`${prefixCls}-pane`, element.props.className].filter(Boolean).join(' ').trim(),
             style: { ...element.props.style },
           });
-          const visiableBar = (visiable === true || (visiable && visiable.includes((idx + 1) as never))) || false;
+          const visiableBar = visiable === true || (visiable && visiable.includes((idx + 1) as never)) || false;
           const barProps = {
-            className: [`${prefixCls}-bar`, 
-            lineBar ? `${prefixCls}-line-bar` : null,
-            !lineBar ? `${prefixCls}-large-bar` : null].filter(Boolean)
-            .join(' ')
-            .trim(),
+            className: [
+              `${prefixCls}-bar`,
+              lineBar ? `${prefixCls}-line-bar` : null,
+              !lineBar ? `${prefixCls}-large-bar` : null,
+            ]
+              .filter(Boolean)
+              .join(' ')
+              .trim(),
           };
           if (disable === true || (disable && disable.includes((idx + 1) as never))) {
-            barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean)
-            .join(' ')
-            .trim();
+            barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean).join(' ').trim();
           }
           let BarCom = null;
           if (idx !== 0 && visiableBar && renderBar) {
-            BarCom = renderBar({ ...barProps, onMouseDown:  this.onMouseDown.bind(this, idx + 1) });
+            BarCom = renderBar({ ...barProps, onMouseDown: this.onMouseDown.bind(this, idx + 1) });
           } else if (idx !== 0 && visiableBar) {
-            BarCom = React.createElement('div', { ...barProps }, <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />)
+            BarCom = React.createElement(
+              'div',
+              { ...barProps },
+              <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />,
+            );
           }
           return (
             <React.Fragment key={idx}>

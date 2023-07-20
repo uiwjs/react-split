@@ -1,87 +1,51 @@
 {
-  "name": "@uiw/react-split",
-  "version": "5.9.0",
-  "description": "A piece of content can be divided into areas that can be dragged to adjust the width or height.",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "homepage": "https://uiwjs.github.io/react-split",
+  "private": true,
   "scripts": {
-    "prepare": "npm run build",
-    "released": "npm run build && npm run bundle && npm run bundle:min && npm run doc",
-    "doc": "kkt build --app-src ./website",
-    "start": "kkt start --app-src ./website",
-    "css:watch": "compile-less -d src -o esm --watch",
-    "css:build": "compile-less -d src -o esm",
-    "css:build:dist": "compile-less -d src --combine dist.css --rm-global",
-    "bundle": "ncc build src/index.tsx --target web --filename split",
-    "bundle:min": "ncc build src/index.tsx --target web --filename split --minify",
-    "watch": "tsbb watch src/*.tsx --use-babel & npm run css:watch",
-    "build": "tsbb build src/*.tsx --use-babel && npm run css:build && npm run css:build:dist",
+    "doc": "lerna exec --scope www -- npm run build",
+    "start": "lerna exec --scope www -- npm run start",
+    "⬇️⬇️⬇️⬇️⬇️ package ⬇️⬇️⬇️⬇️⬇️": "▼▼▼▼▼ package ▼▼▼▼▼",
+    "build": "lerna exec --scope @uiw/* -- tsbb build src/*.tsx --use-babel --cjs cjs --bail && npm run css:build && npm run css:build:dist",
+    "watch": "lerna exec \"tsbb watch src/*.tsx --use-babel --cjs cjs\" --scope @uiw/* & npm run css:watch",
+    "css:build": "lerna exec --scope @uiw/* -- compile-less -d src -o esm",
+    "css:watch": "lerna exec --scope @uiw/* -- compile-less -d src -o esm --watch",
+    "css:build:dist": "lerna exec --scope @uiw/* -- compile-less -d src -o lib --combine=dist.css",
+    "bundle": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist",
+    "bundle:min": "lerna exec --scope @uiw/* -- ncc build src/index.tsx --target web --filename dist --minify",
+    "⬆️⬆️⬆️⬆️⬆️ package ⬆️⬆️⬆️⬆️⬆️": "▲▲▲▲▲ package ▲▲▲▲▲",
+    "type-check": "tsc --noEmit",
     "test": "tsbb test",
     "coverage": "tsbb test --coverage --bail",
-    "type-check": "tsc --noEmit"
+    "prepare": "husky install",
+    "version": "lerna version --exact --force-publish --no-push --no-git-tag-version",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx,html,less,md,json}'",
+    "remove": "npm run clean && lerna exec \"rm -rf package-lock.json\" --scope react-code-preview-layout --scope www",
+    "clean": "lerna clean --yes"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/uiwjs/react-split.git"
-  },
-  "author": "Kenny Wong <wowohoo@qq.com>",
-  "license": "MIT",
-  "files": [
-    "src/**/*.{ts,tsx,less}",
-    "dist.css",
-    "dist",
-    "README-zh.md",
-    "esm",
-    "cjs"
+  "workspaces": [
+    "core",
+    "www"
   ],
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html,less,md,json}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
-    "@kkt/less-modules": "^7.4.9",
-    "@kkt/ncc": "~1.0.8",
-    "@kkt/raw-modules": "^7.4.9",
-    "@kkt/scope-plugin-options": "^7.4.9",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
-    "@uiw/react-codepen": "^1.0.2",
-    "@uiw/react-codesandbox": "^1.1.5",
-    "@uiw/react-github-corners": "~1.5.3",
-    "@uiw/react-markdown-preview": "~4.1.0",
-    "@uiw/reset.css": "~1.0.6",
-    "@wcj/dark-mode": "^1.0.14",
+    "@kkt/ncc": "^1.0.15",
+    "@kkt/less-modules": "^7.5.2",
     "compile-less-cli": "~1.8.11",
-    "goober": "^2.1.13",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.6.0",
     "jest-environment-node": "^29.5.0",
     "jest-watch-typeahead": "^2.2.2",
-    "kkt": "^7.4.9",
-    "markdown-react-code-preview-loader": "^2.1.2",
-    "react": "^18.2.0",
-    "react-code-preview-layout": "^3.0.0",
-    "react-dom": "^18.2.0",
-    "tsbb": "^4.1.5",
-    "uiw": "^4.21.14"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "husky": "~8.0.3",
+    "kkt": "^7.5.2",
+    "lerna": "^7.1.4",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "tsbb": "^4.1.14"
   }
 }

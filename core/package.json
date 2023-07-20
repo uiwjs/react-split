@@ -1,0 +1,29 @@
+{
+  "name": "@uiw/react-split",
+  "version": "5.9.0",
+  "description": "A piece of content can be divided into areas that can be dragged to adjust the width or height.",
+  "main": "cjs/index.js",
+  "module": "esm/index.js",
+  "homepage": "https://uiwjs.github.io/react-split",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uiwjs/react-split.git"
+  },
+  "author": "Kenny Wong <wowohoo@qq.com>",
+  "license": "MIT",
+  "files": [
+    "src/**/*.{ts,tsx,less}",
+    "dist.css",
+    "dist",
+    "esm",
+    "cjs"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "devDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

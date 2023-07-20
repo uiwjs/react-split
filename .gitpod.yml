@@ -3,4 +3,4 @@ ports:
     onOpen: open-preview
 tasks:
   - init: npm install
-    command: npm run hoist && npm run build && npm run start
+    command: npm run build && npm run start
