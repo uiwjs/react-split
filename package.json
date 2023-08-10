@@ -36,7 +36,7 @@
   "devDependencies": {
     "@kkt/ncc": "^1.0.15",
     "@kkt/less-modules": "^7.5.2",
-    "compile-less-cli": "~1.8.11",
+    "compile-less-cli": "~1.9.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.6.0",
     "jest-environment-node": "^29.5.0",
