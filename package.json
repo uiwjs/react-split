@@ -33,6 +33,15 @@
       "prettier --write"
     ]
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/core/src/*.{tsx,ts}"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json-summary"
+    ]
+  },
   "devDependencies": {
     "@kkt/ncc": "^1.0.15",
     "@kkt/less-modules": "^7.5.2",

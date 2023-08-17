@@ -4,7 +4,7 @@
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import React from 'react';
-import Split from '../core';
+import Split from '../core/src/';
 
 test('renders react-split', () => {
   render(
