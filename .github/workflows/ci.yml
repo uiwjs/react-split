@@ -81,6 +81,7 @@ jobs:
       - run: npm publish --access public
         name: 📦 @uiw/react-split publish to NPM
         continue-on-error: true
+        working-directory: core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   
