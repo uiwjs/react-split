@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.0f787e15.css",
-    "main.js": "/static/js/main.c75ab364.js",
+    "main.css": "/static/css/main.16ad0cf7.css",
+    "main.js": "/static/js/main.e44ed563.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.bffefd2d.js",
     "uiw-vendor.css": "/static/css/uiw-vendor.db1975c1.css",
-    "uiw-vendor.js": "/static/js/uiw-vendor.4c23b982.js",
+    "uiw-vendor.js": "/static/js/uiw-vendor.59554f5f.js",
     "parse5-vendor.js": "/static/js/parse5-vendor.2b2a1193.js",
     "react-vendor.js": "/static/js/react-vendor.06730ae1.js",
-    "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.5ed23f9c.js",
+    "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.a3b05cbf.js",
     "index.html": "/index.html",
-    "main.0f787e15.css.map": "/static/css/main.0f787e15.css.map",
-    "main.c75ab364.js.map": "/static/js/main.c75ab364.js.map",
+    "main.16ad0cf7.css.map": "/static/css/main.16ad0cf7.css.map",
+    "main.e44ed563.js.map": "/static/js/main.e44ed563.js.map",
     "refractor-vendor.bffefd2d.js.map": "/static/js/refractor-vendor.bffefd2d.js.map",
     "uiw-vendor.db1975c1.css.map": "/static/css/uiw-vendor.db1975c1.css.map",
-    "uiw-vendor.4c23b982.js.map": "/static/js/uiw-vendor.4c23b982.js.map",
+    "uiw-vendor.59554f5f.js.map": "/static/js/uiw-vendor.59554f5f.js.map",
     "parse5-vendor.2b2a1193.js.map": "/static/js/parse5-vendor.2b2a1193.js.map",
     "react-vendor.06730ae1.js.map": "/static/js/react-vendor.06730ae1.js.map",
-    "babel-standalone-vendor.5ed23f9c.js.map": "/static/js/babel-standalone-vendor.5ed23f9c.js.map"
+    "babel-standalone-vendor.a3b05cbf.js.map": "/static/js/babel-standalone-vendor.a3b05cbf.js.map"
   },
   "entrypoints": [
     "static/js/refractor-vendor.bffefd2d.js",
     "static/css/uiw-vendor.db1975c1.css",
-    "static/js/uiw-vendor.4c23b982.js",
+    "static/js/uiw-vendor.59554f5f.js",
     "static/js/parse5-vendor.2b2a1193.js",
     "static/js/react-vendor.06730ae1.js",
-    "static/js/babel-standalone-vendor.5ed23f9c.js",
-    "static/css/main.0f787e15.css",
-    "static/js/main.c75ab364.js"
+    "static/js/babel-standalone-vendor.a3b05cbf.js",
+    "static/css/main.16ad0cf7.css",
+    "static/js/main.e44ed563.js"
   ]
 }
