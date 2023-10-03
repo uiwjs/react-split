@@ -17,6 +17,10 @@ export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
   /** Set the drag and drop toolbar as a line style. */
   lineBar?: boolean;
   /** Set the dragged toolbar, whether it is visible or not */
+  visible?: boolean | number[];
+  /**
+   * @deprecated Use `visible` instead
+   */
   visiable?: boolean | number[];
   /**
    * Set the drag and drop toolbar, disable
@@ -149,6 +153,7 @@ export default class Split extends React.Component<SplitProps, SplitState> {
       children,
       mode,
       visiable,
+      visible = this.props.visible ?? this.props.visiable,
       renderBar,
       lineBar,
       disable,
@@ -169,7 +174,7 @@ export default class Split extends React.Component<SplitProps, SplitState> {
             className: [`${prefixCls}-pane`, element.props.className].filter(Boolean).join(' ').trim(),
             style: { ...element.props.style },
           });
-          const visiableBar = visiable === true || (visiable && visiable.includes((idx + 1) as never)) || false;
+          const visibleBar = visible === true || (visible && visible.includes((idx + 1) as never)) || false;
           const barProps = {
             className: [
               `${prefixCls}-bar`,
@@ -184,9 +189,9 @@ export default class Split extends React.Component<SplitProps, SplitState> {
             barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean).join(' ').trim();
           }
           let BarCom = null;
-          if (idx !== 0 && visiableBar && renderBar) {
+          if (idx !== 0 && visibleBar && renderBar) {
             BarCom = renderBar({ ...barProps, onMouseDown: this.onMouseDown.bind(this, idx + 1) });
-          } else if (idx !== 0 && visiableBar) {
+          } else if (idx !== 0 && visibleBar) {
             BarCom = React.createElement(
               'div',
               { ...barProps },

@@ -56,7 +56,7 @@ export default Demo;
 
 ### Available for layout
 
-Setting `visiable={false}` disables the drag bar, which can be used for layout.
+Setting `visible={false}` disables the drag bar, which can be used for layout.
 
 ```jsx mdx:preview&background=#fff&codeSandbox=true&codePen=true
 import React from 'react';
@@ -64,18 +64,18 @@ import Split from '@uiw/react-split';
 
 const Demo = () => (
   <div>
-    <Split mode="vertical" visiable={false}>
+    <Split mode="vertical" visible={false}>
       <div style={{ minHeight: 45, background: '#dcdcdc' }}>Header</div>
-      <Split visiable={false}>
+      <Split visible={false}>
         <div style={{ minWidth: 200, maxWidth: 200, minHeight: 120, background: '#b5b5b5' }}>Sider</div>
         <div style={{ width: '100%', background: '#ececec' }}>Content</div>
       </Split>
       <div style={{ minHeight: 45, background: '#dcdcdc' }}>Footer</div>
     </Split>
     <div style={{ height: 20 }}></div>
-    <Split visiable={false}>
+    <Split visible={false}>
       <div style={{ minWidth: 200, maxWidth: 200, minHeight: 85, background: '#a9a9a9' }}>Sider</div>
-      <Split mode="vertical" visiable={false} style={{ width: '100%' }}>
+      <Split mode="vertical" visible={false} style={{ width: '100%' }}>
         <div style={{ minHeight: 45, background: '#dcdcdc' }}>Header</div>
         <div style={{ minHeight: 85, background: '#b5b5b5' }}>Content</div>
         <div style={{ minHeight: 45, background: '#dcdcdc' }}>Footer</div>
@@ -319,6 +319,10 @@ export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
   /** Set the drag and drop toolbar as a line style. */
   lineBar?: boolean;
   /** Set the dragged toolbar, whether it is visible or not */
+  visible?: boolean | number[];
+  /**
+   * @deprecated Use `visible` instead
+   */
   visiable?: boolean | number[];
   /**
    * Set the drag and drop toolbar, disable
