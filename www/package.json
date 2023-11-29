@@ -1,7 +1,7 @@
 {
   "name": "www",
   "private": true,
-  "version": "5.9.2",
+  "version": "5.9.3",
   "license": "MIT",
   "scripts": {
     "build": "kkt build",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@uiw/react-markdown-preview-example": "^2.0.0",
-    "@uiw/react-split": "5.9.2"
+    "@uiw/react-split": "5.9.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
