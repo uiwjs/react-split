@@ -5,6 +5,7 @@
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "homepage": "https://uiwjs.github.io/react-split",
+  "funding": "https://jaywcjlove.github.io/#/sponsor",
   "repository": {
     "type": "git",
     "url": "https://github.com/uiwjs/react-split.git"
