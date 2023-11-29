@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.16ad0cf7.css",
-    "main.js": "/static/js/main.16fc41eb.js",
+    "main.js": "/static/js/main.f4ca9f98.js",
     "refractor-vendor.js": "/static/js/refractor-vendor.422672b4.js",
     "uiw-vendor.css": "/static/css/uiw-vendor.ce1c9203.css",
     "uiw-vendor.js": "/static/js/uiw-vendor.0f95d3a7.js",
@@ -10,7 +10,7 @@
     "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.fd21f9c7.js",
     "index.html": "/index.html",
     "main.16ad0cf7.css.map": "/static/css/main.16ad0cf7.css.map",
-    "main.16fc41eb.js.map": "/static/js/main.16fc41eb.js.map",
+    "main.f4ca9f98.js.map": "/static/js/main.f4ca9f98.js.map",
     "refractor-vendor.422672b4.js.map": "/static/js/refractor-vendor.422672b4.js.map",
     "uiw-vendor.ce1c9203.css.map": "/static/css/uiw-vendor.ce1c9203.css.map",
     "uiw-vendor.0f95d3a7.js.map": "/static/js/uiw-vendor.0f95d3a7.js.map",
@@ -26,6 +26,6 @@
     "static/js/react-vendor.d6e737a5.js",
     "static/js/babel-standalone-vendor.fd21f9c7.js",
     "static/css/main.16ad0cf7.css",
-    "static/js/main.16fc41eb.js"
+    "static/js/main.f4ca9f98.js"
   ]
 }
