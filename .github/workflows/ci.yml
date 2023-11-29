@@ -27,6 +27,7 @@ jobs:
       - run: npm run coverage
       - run: npm run type-check
       - run: cp -rp coverage www/build
+      - run: cp -rp README-zh.md core
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main

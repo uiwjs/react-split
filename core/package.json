@@ -14,6 +14,7 @@
   "license": "MIT",
   "files": [
     "src/**/*.{ts,tsx,less}",
+    "README-zh.md",
     "dist.css",
     "dist",
     "esm",
