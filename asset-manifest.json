@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/static/css/main.16ad0cf7.css",
-    "main.js": "/static/js/main.ec270b69.js",
-    "refractor-vendor.js": "/static/js/refractor-vendor.eb103d1f.js",
+    "main.js": "/static/js/main.089329f5.js",
+    "refractor-vendor.js": "/static/js/refractor-vendor.422672b4.js",
     "uiw-vendor.css": "/static/css/uiw-vendor.ce1c9203.css",
-    "uiw-vendor.js": "/static/js/uiw-vendor.50e35bef.js",
-    "parse5-vendor.js": "/static/js/parse5-vendor.4d76d34f.js",
+    "uiw-vendor.js": "/static/js/uiw-vendor.0f95d3a7.js",
+    "parse5-vendor.js": "/static/js/parse5-vendor.48753a68.js",
     "react-vendor.js": "/static/js/react-vendor.d6e737a5.js",
     "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.fd21f9c7.js",
     "index.html": "/index.html",
     "main.16ad0cf7.css.map": "/static/css/main.16ad0cf7.css.map",
-    "main.ec270b69.js.map": "/static/js/main.ec270b69.js.map",
-    "refractor-vendor.eb103d1f.js.map": "/static/js/refractor-vendor.eb103d1f.js.map",
+    "main.089329f5.js.map": "/static/js/main.089329f5.js.map",
+    "refractor-vendor.422672b4.js.map": "/static/js/refractor-vendor.422672b4.js.map",
     "uiw-vendor.ce1c9203.css.map": "/static/css/uiw-vendor.ce1c9203.css.map",
-    "uiw-vendor.50e35bef.js.map": "/static/js/uiw-vendor.50e35bef.js.map",
-    "parse5-vendor.4d76d34f.js.map": "/static/js/parse5-vendor.4d76d34f.js.map",
+    "uiw-vendor.0f95d3a7.js.map": "/static/js/uiw-vendor.0f95d3a7.js.map",
+    "parse5-vendor.48753a68.js.map": "/static/js/parse5-vendor.48753a68.js.map",
     "react-vendor.d6e737a5.js.map": "/static/js/react-vendor.d6e737a5.js.map",
     "babel-standalone-vendor.fd21f9c7.js.map": "/static/js/babel-standalone-vendor.fd21f9c7.js.map"
   },
   "entrypoints": [
-    "static/js/refractor-vendor.eb103d1f.js",
+    "static/js/refractor-vendor.422672b4.js",
     "static/css/uiw-vendor.ce1c9203.css",
-    "static/js/uiw-vendor.50e35bef.js",
-    "static/js/parse5-vendor.4d76d34f.js",
+    "static/js/uiw-vendor.0f95d3a7.js",
+    "static/js/parse5-vendor.48753a68.js",
     "static/js/react-vendor.d6e737a5.js",
     "static/js/babel-standalone-vendor.fd21f9c7.js",
     "static/css/main.16ad0cf7.css",
-    "static/js/main.ec270b69.js"
+    "static/js/main.089329f5.js"
   ]
 }
