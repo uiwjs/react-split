@@ -1,31 +1,31 @@
 {
   "files": {
     "main.css": "/static/css/main.16ad0cf7.css",
-    "main.js": "/static/js/main.dcd36b78.js",
-    "refractor-vendor.js": "/static/js/refractor-vendor.bffefd2d.js",
-    "uiw-vendor.css": "/static/css/uiw-vendor.db1975c1.css",
-    "uiw-vendor.js": "/static/js/uiw-vendor.6ef1d37e.js",
-    "parse5-vendor.js": "/static/js/parse5-vendor.2b2a1193.js",
-    "react-vendor.js": "/static/js/react-vendor.06730ae1.js",
-    "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.ce7e7bf6.js",
+    "main.js": "/static/js/main.ec270b69.js",
+    "refractor-vendor.js": "/static/js/refractor-vendor.eb103d1f.js",
+    "uiw-vendor.css": "/static/css/uiw-vendor.ce1c9203.css",
+    "uiw-vendor.js": "/static/js/uiw-vendor.50e35bef.js",
+    "parse5-vendor.js": "/static/js/parse5-vendor.4d76d34f.js",
+    "react-vendor.js": "/static/js/react-vendor.d6e737a5.js",
+    "babel-standalone-vendor.js": "/static/js/babel-standalone-vendor.fd21f9c7.js",
     "index.html": "/index.html",
     "main.16ad0cf7.css.map": "/static/css/main.16ad0cf7.css.map",
-    "main.dcd36b78.js.map": "/static/js/main.dcd36b78.js.map",
-    "refractor-vendor.bffefd2d.js.map": "/static/js/refractor-vendor.bffefd2d.js.map",
-    "uiw-vendor.db1975c1.css.map": "/static/css/uiw-vendor.db1975c1.css.map",
-    "uiw-vendor.6ef1d37e.js.map": "/static/js/uiw-vendor.6ef1d37e.js.map",
-    "parse5-vendor.2b2a1193.js.map": "/static/js/parse5-vendor.2b2a1193.js.map",
-    "react-vendor.06730ae1.js.map": "/static/js/react-vendor.06730ae1.js.map",
-    "babel-standalone-vendor.ce7e7bf6.js.map": "/static/js/babel-standalone-vendor.ce7e7bf6.js.map"
+    "main.ec270b69.js.map": "/static/js/main.ec270b69.js.map",
+    "refractor-vendor.eb103d1f.js.map": "/static/js/refractor-vendor.eb103d1f.js.map",
+    "uiw-vendor.ce1c9203.css.map": "/static/css/uiw-vendor.ce1c9203.css.map",
+    "uiw-vendor.50e35bef.js.map": "/static/js/uiw-vendor.50e35bef.js.map",
+    "parse5-vendor.4d76d34f.js.map": "/static/js/parse5-vendor.4d76d34f.js.map",
+    "react-vendor.d6e737a5.js.map": "/static/js/react-vendor.d6e737a5.js.map",
+    "babel-standalone-vendor.fd21f9c7.js.map": "/static/js/babel-standalone-vendor.fd21f9c7.js.map"
   },
   "entrypoints": [
-    "static/js/refractor-vendor.bffefd2d.js",
-    "static/css/uiw-vendor.db1975c1.css",
-    "static/js/uiw-vendor.6ef1d37e.js",
-    "static/js/parse5-vendor.2b2a1193.js",
-    "static/js/react-vendor.06730ae1.js",
-    "static/js/babel-standalone-vendor.ce7e7bf6.js",
+    "static/js/refractor-vendor.eb103d1f.js",
+    "static/css/uiw-vendor.ce1c9203.css",
+    "static/js/uiw-vendor.50e35bef.js",
+    "static/js/parse5-vendor.4d76d34f.js",
+    "static/js/react-vendor.d6e737a5.js",
+    "static/js/babel-standalone-vendor.fd21f9c7.js",
     "static/css/main.16ad0cf7.css",
-    "static/js/main.dcd36b78.js"
+    "static/js/main.ec270b69.js"
   ]
 }
