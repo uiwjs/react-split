@@ -12,12 +12,12 @@
     "@uiw/react-split": "5.9.3"
   },
   "devDependencies": {
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.6",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "kkt": "^7.4.9",
     "markdown-react-code-preview-loader": "^2.1.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
     "uiw": "^4.21.14"
   },
   "eslintConfig": {
