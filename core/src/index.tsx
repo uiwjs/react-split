@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './style/index.less';
 
 export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDragEnd'> {
@@ -13,7 +13,7 @@ export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
   /** Callback function for dragging end */
   onDragEnd?: (preSize: number, nextSize: number, paneNumber: number) => void;
   /** Support custom drag and drop toolbar */
-  renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => JSX.Element;
+  renderBar?: (props: React.HTMLAttributes<HTMLDivElement>) => React.ReactElement;
   /** Set the drag and drop toolbar as a line style. */
   lineBar?: boolean;
   /** Set the dragged toolbar, whether it is visible or not */
@@ -31,181 +31,186 @@ export interface SplitProps extends Omit<React.HTMLAttributes<HTMLDivElement>, '
    */
   mode?: 'horizontal' | 'vertical';
 }
-export interface SplitState {
-  dragging: boolean;
-}
 
-export default class Split extends React.Component<SplitProps, SplitState> {
-  public static defaultProps: SplitProps = {
-    prefixCls: 'w-split',
-    visiable: true,
-    mode: 'horizontal',
-  };
-  public state: SplitState = {
-    dragging: false,
-  };
-  public warpper!: HTMLDivElement | null;
-  public paneNumber!: number;
-  public startX!: number;
-  public startY!: number;
-  public move!: boolean;
-  public target!: HTMLDivElement;
+const Split: React.FC<SplitProps> = (props: SplitProps) => {
+  const {
+    prefixCls = 'w-split',
+    visiable = true,
+    mode = 'horizontal',
+    className,
+    children,
+    visible = props.visible ?? props.visiable,
+    renderBar,
+    lineBar,
+    disable,
+    onDragEnd,
+    onDragging,
+    ...other
+  } = props;
+  const [dragging, setDragging] = useState(false);
 
-  public boxWidth!: number;
-  public boxHeight!: number;
-  public preWidth!: number;
-  public nextWidth!: number;
-  public preHeight!: number;
-  public nextHeight!: number;
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const paneNumberRef = useRef<number>(0);
+  const startXRef = useRef<number>(0);
+  const startYRef = useRef<number>(0);
+  const moveRef = useRef<boolean>(false);
+  const targetRef = useRef<HTMLDivElement | null>(null);
 
-  public preSize!: number;
-  public nextSize!: number;
-  constructor(props: SplitProps) {
-    super(props);
-    this.onDragEnd = this.onDragEnd.bind(this);
-    this.onDragging = this.onDragging.bind(this);
-  }
-  public componentWillUnmount() {
-    this.removeEvent();
-  }
-  private removeEvent() {
-    window.removeEventListener('mousemove', this.onDragging, false);
-    window.removeEventListener('mouseup', this.onDragEnd, false);
-  }
-  onMouseDown(paneNumber: number, env: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-    if (!env.target || !this.warpper) {
-      return;
-    }
-    this.paneNumber = paneNumber;
-    this.startX = env.clientX;
-    this.startY = env.clientY;
-    this.move = true;
-    this.target = (env.target as HTMLDivElement).parentNode as HTMLDivElement;
-    const prevTarget = this.target.previousElementSibling;
-    const nextTarget = this.target.nextElementSibling;
-    this.boxWidth = this.warpper.clientWidth;
-    this.boxHeight = this.warpper.clientHeight;
-    if (prevTarget) {
-      this.preWidth = prevTarget.clientWidth;
-      this.preHeight = prevTarget.clientHeight;
-    }
-    if (nextTarget) {
-      this.nextWidth = nextTarget.clientWidth;
-      this.nextHeight = nextTarget.clientHeight;
-    }
-    window.addEventListener('mousemove', this.onDragging);
-    window.addEventListener('mouseup', this.onDragEnd, false);
-    this.setState({ dragging: true });
-  }
-  onDragging(env: Event) {
-    if (!this.move) {
-      return;
-    }
-    if (!this.state.dragging) {
-      this.setState({ dragging: true });
-    }
-    const { mode, onDragging } = this.props;
-    const nextTarget = this.target.nextElementSibling as HTMLDivElement;
-    const prevTarget = this.target.previousElementSibling as HTMLDivElement;
-    const x = (env as MouseEvent).clientX - this.startX;
-    const y = (env as MouseEvent).clientY - this.startY;
-    this.preSize = 0;
-    this.nextSize = 0;
-    if (mode === 'horizontal') {
-      this.preSize = this.preWidth + x > -1 ? this.preWidth + x : 0;
-      this.nextSize = this.nextWidth - x > -1 ? this.nextWidth - x : 0;
-      if (this.preSize === 0 || this.nextSize === 0) {
+  const boxWidthRef = useRef<number>(0);
+  const boxHeightRef = useRef<number>(0);
+  const preWidthRef = useRef<number>(0);
+  const nextWidthRef = useRef<number>(0);
+  const preHeightRef = useRef<number>(0);
+  const nextHeightRef = useRef<number>(0);
+
+  const preSizeRef = useRef<number>(0);
+  const nextSizeRef = useRef<number>(0);
+
+  const removeEvent = useCallback(() => {
+    window.removeEventListener('mousemove', onDraggingHandler, false);
+    window.removeEventListener('mouseup', onDragEndHandler, false);
+  }, []);
+
+  const onDraggingHandler = useCallback(
+    (env: Event) => {
+      if (!moveRef.current) {
         return;
       }
-      this.preSize = (this.preSize / this.boxWidth >= 1 ? 1 : this.preSize / this.boxWidth) * 100;
-      this.nextSize = (this.nextSize / this.boxWidth >= 1 ? 1 : this.nextSize / this.boxWidth) * 100;
-      if (prevTarget && nextTarget) {
-        prevTarget.style.width = `${this.preSize}%`;
-        nextTarget.style.width = `${this.nextSize}%`;
+      if (!dragging) {
+        setDragging(true);
       }
-    }
-    if (mode === 'vertical' && this.preHeight + y > -1 && this.nextHeight - y > -1) {
-      this.preSize = this.preHeight + y > -1 ? this.preHeight + y : 0;
-      this.nextSize = this.nextHeight - y > -1 ? this.nextHeight - y : 0;
-      this.preSize = (this.preSize / this.boxHeight >= 1 ? 1 : this.preSize / this.boxHeight) * 100;
-      this.nextSize = (this.nextSize / this.boxHeight >= 1 ? 1 : this.nextSize / this.boxHeight) * 100;
-      if (this.preSize === 0 || this.nextSize === 0) {
+      const nextTarget = targetRef.current?.nextElementSibling as HTMLDivElement;
+      const prevTarget = targetRef.current?.previousElementSibling as HTMLDivElement;
+      const x = (env as MouseEvent).clientX - startXRef.current;
+      const y = (env as MouseEvent).clientY - startYRef.current;
+      preSizeRef.current = 0;
+      nextSizeRef.current = 0;
+      if (mode === 'horizontal') {
+        preSizeRef.current = preWidthRef.current + x > -1 ? preWidthRef.current + x : 0;
+        nextSizeRef.current = nextWidthRef.current - x > -1 ? nextWidthRef.current - x : 0;
+        if (preSizeRef.current === 0 || nextSizeRef.current === 0) {
+          return;
+        }
+        preSizeRef.current =
+          (preSizeRef.current / boxWidthRef.current >= 1 ? 1 : preSizeRef.current / boxWidthRef.current) * 100;
+        nextSizeRef.current =
+          (nextSizeRef.current / boxWidthRef.current >= 1 ? 1 : nextSizeRef.current / boxWidthRef.current) * 100;
+        if (prevTarget && nextTarget) {
+          prevTarget.style.width = `${preSizeRef.current}%`;
+          nextTarget.style.width = `${nextSizeRef.current}%`;
+        }
+      }
+      if (mode === 'vertical' && preHeightRef.current + y > -1 && nextHeightRef.current - y > -1) {
+        preSizeRef.current = preHeightRef.current + y > -1 ? preHeightRef.current + y : 0;
+        nextSizeRef.current = nextHeightRef.current - y > -1 ? nextHeightRef.current - y : 0;
+        preSizeRef.current =
+          (preSizeRef.current / boxHeightRef.current >= 1 ? 1 : preSizeRef.current / boxHeightRef.current) * 100;
+        nextSizeRef.current =
+          (nextSizeRef.current / boxHeightRef.current >= 1 ? 1 : nextSizeRef.current / boxHeightRef.current) * 100;
+        if (preSizeRef.current === 0 || nextSizeRef.current === 0) {
+          return;
+        }
+        if (prevTarget && nextTarget) {
+          prevTarget.style.height = `${preSizeRef.current}%`;
+          nextTarget.style.height = `${nextSizeRef.current}%`;
+        }
+      }
+      onDragging && onDragging(preSizeRef.current, nextSizeRef.current, paneNumberRef.current);
+    },
+    [mode, onDragging, dragging],
+  );
+
+  const onDragEndHandler = useCallback(() => {
+    moveRef.current = false;
+    onDragEnd && onDragEnd(preSizeRef.current, nextSizeRef.current, paneNumberRef.current);
+    removeEvent();
+    setDragging(false);
+  }, [onDragEnd, removeEvent]);
+
+  const onMouseDown = useCallback(
+    (paneNumber: number, env: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+      if (!env.target || !wrapperRef.current) {
         return;
       }
-      if (prevTarget && nextTarget) {
-        prevTarget.style.height = `${this.preSize}%`;
-        nextTarget.style.height = `${this.nextSize}%`;
+      paneNumberRef.current = paneNumber;
+      startXRef.current = env.clientX;
+      startYRef.current = env.clientY;
+      moveRef.current = true;
+      targetRef.current = (env.target as HTMLDivElement).parentNode as HTMLDivElement;
+      const prevTarget = targetRef.current.previousElementSibling;
+      const nextTarget = targetRef.current.nextElementSibling;
+      boxWidthRef.current = wrapperRef.current.clientWidth;
+      boxHeightRef.current = wrapperRef.current.clientHeight;
+      if (prevTarget) {
+        preWidthRef.current = prevTarget.clientWidth;
+        preHeightRef.current = prevTarget.clientHeight;
       }
-    }
-    onDragging && onDragging(this.preSize, this.nextSize, this.paneNumber);
-  }
-  onDragEnd() {
-    const { onDragEnd } = this.props;
-    this.move = false;
-    onDragEnd && onDragEnd(this.preSize, this.nextSize, this.paneNumber);
-    this.removeEvent();
-    this.setState({ dragging: false });
-  }
-  render() {
-    const {
-      prefixCls,
-      className,
-      children,
-      mode,
-      visiable,
-      visible = this.props.visible ?? this.props.visiable,
-      renderBar,
-      lineBar,
-      disable,
-      onDragEnd,
-      onDragging,
-      ...other
-    } = this.props;
-    const { dragging } = this.state;
-    const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null]
-      .filter(Boolean)
-      .join(' ')
-      .trim();
-    const child = React.Children.toArray(children);
-    return (
-      <div className={cls} {...other} ref={(node) => (this.warpper = node)}>
-        {React.Children.map(child, (element: any, idx: number) => {
-          const props = Object.assign({}, element.props, {
-            className: [`${prefixCls}-pane`, element.props.className].filter(Boolean).join(' ').trim(),
-            style: { ...element.props.style },
+      if (nextTarget) {
+        nextWidthRef.current = nextTarget.clientWidth;
+        nextHeightRef.current = nextTarget.clientHeight;
+      }
+      window.addEventListener('mousemove', onDraggingHandler);
+      window.addEventListener('mouseup', onDragEndHandler, false);
+      setDragging(true);
+    },
+    [onDraggingHandler, onDragEndHandler],
+  );
+
+  useEffect(() => {
+    return () => {
+      removeEvent();
+    };
+  }, [removeEvent]);
+
+  const cls = [prefixCls, className, `${prefixCls}-${mode}`, dragging ? 'dragging' : null]
+    .filter(Boolean)
+    .join(' ')
+    .trim();
+  const child = React.Children.toArray(children);
+
+  return (
+    <div className={cls} {...other} ref={wrapperRef}>
+      {React.Children.map(child, (element: any, idx: number) => {
+        const props = Object.assign({}, element.props, {
+          className: [`${prefixCls}-pane`, element.props.className].filter(Boolean).join(' ').trim(),
+          style: { ...element.props.style },
+        });
+        const visibleBar = visible === true || (visible && visible.includes((idx + 1) as never)) || false;
+        const barProps = {
+          className: [
+            `${prefixCls}-bar`,
+            lineBar ? `${prefixCls}-line-bar` : null,
+            !lineBar ? `${prefixCls}-large-bar` : null,
+          ]
+            .filter(Boolean)
+            .join(' ')
+            .trim(),
+        };
+        if (disable === true || (disable && disable.includes((idx + 1) as never))) {
+          barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean).join(' ').trim();
+        }
+        let BarCom = null;
+        if (idx !== 0 && visibleBar && renderBar) {
+          BarCom = renderBar({
+            ...barProps,
+            onMouseDown: (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => onMouseDown(idx + 1, e),
           });
-          const visibleBar = visible === true || (visible && visible.includes((idx + 1) as never)) || false;
-          const barProps = {
-            className: [
-              `${prefixCls}-bar`,
-              lineBar ? `${prefixCls}-line-bar` : null,
-              !lineBar ? `${prefixCls}-large-bar` : null,
-            ]
-              .filter(Boolean)
-              .join(' ')
-              .trim(),
-          };
-          if (disable === true || (disable && disable.includes((idx + 1) as never))) {
-            barProps.className = [barProps.className, disable ? 'disable' : null].filter(Boolean).join(' ').trim();
-          }
-          let BarCom = null;
-          if (idx !== 0 && visibleBar && renderBar) {
-            BarCom = renderBar({ ...barProps, onMouseDown: this.onMouseDown.bind(this, idx + 1) });
-          } else if (idx !== 0 && visibleBar) {
-            BarCom = React.createElement(
-              'div',
-              { ...barProps },
-              <div onMouseDown={this.onMouseDown.bind(this, idx + 1)} />,
-            );
-          }
-          return (
-            <React.Fragment key={idx}>
-              {BarCom}
-              {React.cloneElement(element, { ...props })}
-            </React.Fragment>
+        } else if (idx !== 0 && visibleBar) {
+          BarCom = React.createElement(
+            'div',
+            { ...barProps },
+            <div onMouseDown={(e: React.MouseEvent<HTMLDivElement, MouseEvent>) => onMouseDown(idx + 1, e)} />,
           );
-        })}
-      </div>
-    );
-  }
-}
+        }
+        return (
+          <React.Fragment key={idx}>
+            {BarCom}
+            {React.cloneElement(element, { ...props })}
+          </React.Fragment>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Split;
