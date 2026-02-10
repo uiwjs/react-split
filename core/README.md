@@ -1,7 +1,3 @@
-<p align="left">
-<a href="./README-zh.md">简体中文</a>
-</p>
-
 <div align="left" markdown="1">
   <sup>Using <a href="https://wangchujiang.com/#/app" target="_blank">my app</a> is also a way to <a href="https://wangchujiang.com/#/sponsor" target="_blank">support</a> me:</sup>
   <br>
@@ -40,6 +36,10 @@
 <hr>
 
 # Split
+
+<p align="right">
+<a href="./README-zh.md">简体中文</a>
+</p>
 
 [![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-split.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-split)
