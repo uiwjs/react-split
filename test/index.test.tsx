@@ -36,14 +36,17 @@ test('lineBar props', () => {
 
 test('disable props', () => {
   render(
-    <Split disable data-testid="split">
+    <Split disable visible={true} data-testid="split">
       <div> Header </div>
       <div> Header </div>
     </Split>,
   );
   const element = screen.getByTestId('split');
   expect(element.className).toEqual('w-split w-split-horizontal');
-  expect((element.childNodes[1] as any).className).toEqual('w-split-bar w-split-large-bar disable');
+
+  // 使用querySelector查找分割条，而不是依赖childNodes索引
+  const splitBar = element.querySelector('.w-split-bar');
+  expect(splitBar?.className).toEqual('w-split-bar w-split-large-bar disable');
   expect(element.childNodes.length).toEqual(3);
   expect(element).toBeInTheDocument();
 });
