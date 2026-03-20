@@ -18,7 +18,7 @@
   <a target="_blank" href="https://apps.apple.com/app/6740425504" title="KeyClicker for macOS"><img alt="KeyClicker" height="52" width="52" src="https://wangchujiang.com/appicon/key-clicker.png"></a>
   <a target="_blank" href="https://apps.apple.com/app/6739052447" title="DayBar for macOS"><img alt="DayBar" height="52" width="52" src="https://wangchujiang.com/appicon/daybar.png"></a>
   <a target="_blank" href="https://apps.apple.com/app/6739444407" title="Iconed for macOS"><img alt="Iconed" height="52" width="52" src="https://wangchujiang.com/appicon/iconed.png"></a>
-  <a target="_blank" href="https://apps.apple.com/app/6737160756" title="Mousio for macOS"><img alt="Mousio" height="52" width="52" src="https://wangchujiang.com/appicon/rightmenu-master.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6737160756" title="Menuist for macOS"><img alt="Menuist" height="52" width="52" src="https://wangchujiang.com/appicon/rightmenu-master.png"></a>
   <a target="_blank" href="https://apps.apple.com/app/6723903021" title="Paste Quick for macOS"><img alt="Quick RSS" height="52" width="52" src="https://wangchujiang.com/appicon/paste-quick.png"></a>
   <a target="_blank" href="https://apps.apple.com/app/6670696072" title="Quick RSS for macOS/iOS"><img alt="Quick RSS" height="52" width="52" src="https://wangchujiang.com/appicon/quick-rss.png"></a>
   <a target="_blank" href="https://apps.apple.com/app/6670167443" title="Web Serve for macOS"><img alt="Web Serve" height="52" width="52" src="https://wangchujiang.com/appicon/web-serve.png"></a>
@@ -38,17 +38,14 @@
 
 # Split
 
-<p align="right">
-<a href="./README-zh.md">简体中文</a>
-</p>
-
-[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
+[![Buy me a coffee](https://img.shields.io/badge/Buy_Me_a_Coffee-ffdd00?logo=buy-me-a-coffee&logoColor=black)](https://jaywcjlove.github.io/#/sponsor)
+[![Follow On X](https://img.shields.io/badge/Follow%20on%20X-333333?logo=x&logoColor=white)](https://x.com/jaywcjlove)
+[![Chinese](https://jaywcjlove.github.io/sb/lang/chinese.svg)](./README-zh.md)
 [![NPM Downloads](https://img.shields.io/npm/dm/@uiw/react-split.svg?style=flat)](https://www.npmjs.com/package/@uiw/react-split)
 [![Build & Deploy](https://github.com/uiwjs/react-split/actions/workflows/ci.yml/badge.svg)](https://github.com/uiwjs/react-split/actions/workflows/ci.yml)
 [![Open in unpkg](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/@uiw/react-split/file/README.md)
 [![npm version](https://img.shields.io/npm/v/@uiw/react-split.svg)](https://www.npmjs.com/package/@uiw/react-split)
 [![Coverage Status](https://uiwjs.github.io/react-split/badges.svg)](https://uiwjs.github.io/react-split/coverage/lcov-report/)
-[![Open in Gitpod](https://shields.io/badge/Open%20in-Gitpod-green?logo=Gitpod)](https://gitpod.io/#https://github.com/uiwjs/react-split)
 [![Repo Dependents](https://badgen.net/github/dependents-repo/uiwjs/react-split)](https://github.com/uiwjs/react-split/network/dependents)
 
 A piece of content can be divided into areas that can be dragged to adjust the width or height.
